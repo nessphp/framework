@@ -10,6 +10,7 @@
 
 namespace ness\system;
 
+
 use ness\Configuration as conf;
 use ness\Url as purl;
 use const E_USER_ERROR;

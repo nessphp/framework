@@ -8,4 +8,9 @@ class indexController extends myController
     {
         echo "<br>called first controller.";
     }
+
+    public function viewAction($param = 0)
+    {
+        $this->View->Render('welcome.php');
+    }
 }
