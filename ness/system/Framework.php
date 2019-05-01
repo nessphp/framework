@@ -126,10 +126,10 @@ class Framework
                 }
             } else {
                 // if not found an entry point(also indexController.php & IndexAction ) load a 404 error.
-                require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'ErrorHandling.php';
-                $controllerName = 'ErrorHandling';
+                require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'NotFoundError.php';
+                $controllerName = 'NotFoundError';
                 $controller = new $controllerName();
-                $controller->NotFound();
+                $controller->ControllerNotFound();
             }
         }
     }
@@ -147,10 +147,10 @@ class Framework
                     // check each url token with each unwanted parameter if contains it.
                     if (strpos($value, $unwanted) !== false) {
                         // force redirect to ErrorHandling Controller
-                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'ErrorHandling.php';
-                        $controllerName = 'ErrorHandling';
+                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'UrlProtectionError.php';
+                        $controllerName = 'UrlProtectionError';
                         $controller = new $controllerName();
-                        $controller->ProtectedUrl($value, $unwanted);
+                        $controller->ShowErrorPage($value, $unwanted);
                         exit();
                     }
                 }

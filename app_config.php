@@ -71,8 +71,8 @@ Configuration::setVersion('1.0.0');
  */
 Configuration::setDescription('AppDescription');
 
-// Configuration::setUrlProtected(TRUE);
-// Configuration::UnwantedParameters(array("'", "-"));
+Configuration::setUrlProtected(TRUE);
+Configuration::UnwantedParameters(array("'", "-"));
 
 /**-------------------*/
 /** Application Class */
