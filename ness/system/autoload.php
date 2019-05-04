@@ -16,7 +16,9 @@ spl_autoload_register(function ($class) {
     $prefixes = [
         'ness\\',
         'ness\\system',
-        'ness\\ui'
+        'ness\\ui',
+        'ness\\tool'
+        
     ];
     $baseDir = dirname(__DIR__).DIRECTORY_SEPARATOR;
     $baseDir = str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $baseDir);
