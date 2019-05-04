@@ -1,7 +1,7 @@
 <?php
 
 use ness\Controller as myController;
-use ness\Model;
+
 
 class indexController extends myController
 {
@@ -10,9 +10,7 @@ class indexController extends myController
         /**
          * Test Framework libraries 
          */
-        echo "<br>called first controller.<br>";
-        Model::Load('indexModel');
-        $x = new indexModel();
+        $this->View->Render("welcome.php");
 
     }
 }

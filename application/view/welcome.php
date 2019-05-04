@@ -1,6 +1,13 @@
 <?php
-use ness\Url as nUrl; 
-?>
-<h1> Ness PHP - v0.01; </h1>
+    use ness\ui\Page;
 
-<a href="<?= nUrl::RedirectToAction("index", "index", "index");?>">Navigate to Index</a>
+    $page = new Page();
+    $page->setLayout('master.php');
+    $page->BeginContent();
+?>
+
+
+<h1>Inheritance UI</h1>
+<?php
+    $page->EndContent();
+?>
