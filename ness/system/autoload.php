@@ -15,12 +15,14 @@
 spl_autoload_register(function ($class) {
     $prefixes = [
         'ness\\',
-        'ness\\system',
-        'ness\\ui',
-        'ness\\tool',
-        'ness\\io',
-        'ness\\log',
-        'ness\\forms'        
+        'ness\\system\\',
+        'ness\\ui\\',
+        'ness\\tool\\',
+        'ness\\io\\',
+        'ness\\log\\',
+        'ness\\forms\\',
+        'ness\\security\\',
+        'ness\\helpers\\'        
     ];
     $baseDir = dirname(__DIR__).DIRECTORY_SEPARATOR;
     $baseDir = str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $baseDir);
