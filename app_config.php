@@ -9,6 +9,8 @@
  */
 
 use ness\Configuration;
+use ness\log\LogTypeProvider;
+use ness\log\Logger;
 
 /*
  * === [Environment Configuration ] ===
@@ -87,6 +89,7 @@ class Application
      */
     public function Register()
     {
-        echo "configuration file load";
+        //enable test logging
+        Logger::CreateLog(LogTypeProvider::OutputMessage(), 'App_Start', 'Application started at '. date("d M Y H:i:s"));
     }
 }

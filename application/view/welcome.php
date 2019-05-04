@@ -1,13 +1,11 @@
 <?php
-    use ness\ui\Page;
-
-    $page = new Page();
+    $page = new ness\ui\Page();
     $page->setLayout('master.php');
     $page->BeginContent();
 ?>
 
 
-<h1>Inheritance UI</h1>
+<h1>Master Page Tests</h1>
 <?php
     $page->EndContent();
 ?>
