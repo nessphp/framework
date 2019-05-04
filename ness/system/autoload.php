@@ -22,7 +22,9 @@ spl_autoload_register(function ($class) {
         'ness\\log\\',
         'ness\\forms\\',
         'ness\\security\\',
-        'ness\\helpers\\'        
+        'ness\\autopulse\\',
+        'ness\\helpers\\'      
+
     ];
     $baseDir = dirname(__DIR__).DIRECTORY_SEPARATOR;
     $baseDir = str_replace(['\\', '/'], DIRECTORY_SEPARATOR, $baseDir);

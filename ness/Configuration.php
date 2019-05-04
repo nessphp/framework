@@ -56,7 +56,7 @@ class Configuration
         self::$application_version = '1.0.0';
         self::$application_description = 'Your description for the application';
         self::$application_query_data = [];
-        self::$application_resource_file = __DIR__.DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.'resources.xml';
+        self::$application_resource_file = dirname(__DIR__).DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.'resources.xml';
     }
 
     /**
@@ -125,7 +125,8 @@ class Configuration
      */
     public static function setResourceFile($prm_resource_file = 'resources.xml')
     {
-        self::$application_resource_file = __DIR__.DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.$prm_resource_file;
+        self::$application_resource_file = dirname(__DIR__).DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.$prm_resource_file;
+
     }
 
     /**
