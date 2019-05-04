@@ -53,7 +53,7 @@ class Url
      *
      * @return string
      */
-    public static function AreaRedirection($Area = '', $controllerName = '', $action = '', $parameter = null)
+    public static function RedirectToArea($Area = '', $controllerName = '', $action = '', $parameter = null)
     {
         $addArea = '?p='.$Area;
         if (isset($parameter) && !is_null($parameter)) {

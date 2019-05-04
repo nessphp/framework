@@ -36,7 +36,6 @@ class Framework
      * configuration before Running framework.
      *
      * @param string $configFile app_config.php file.
-     *
      * @return void Returns nothing.
      */
     public static function LoadConfig($configFile = 'app_config.php')

@@ -1,16 +1,18 @@
 <?php
 
 use ness\Controller as myController;
+use ness\Model;
 
 class indexController extends myController
 {
     public function indexAction($param = 0)
     {
-        echo "<br>called first controller.";
-    }
+        /**
+         * Test Framework libraries 
+         */
+        echo "<br>called first controller.<br>";
+        Model::Load('indexModel');
+        $x = new indexModel();
 
-    public function viewAction($param = 0)
-    {
-        $this->View->Render('welcome.php');
     }
 }
