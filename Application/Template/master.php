@@ -4,7 +4,6 @@
 	<title>New Application | Ness PHP</title>
 </head>
 <body>
-    
 <?php 
 /**
  * This line below must me available in all your master pages.

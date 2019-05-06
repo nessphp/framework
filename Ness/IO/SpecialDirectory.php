@@ -117,5 +117,15 @@ namespace Ness\IO
         {
             return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'View';
         }
+
+        /**
+         * Content directory of Ness framework
+         * 
+         * @return string
+         */
+        public static function ContentFolder()
+        {
+            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Content';
+        }
     }
 }
