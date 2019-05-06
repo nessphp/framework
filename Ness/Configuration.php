@@ -39,6 +39,8 @@ class Configuration
     private static $errors_enabled;
     /** @ignore */
     private static $application_resource_file;
+    /** @ignore */
+    private static $application_is_maintenance_mode_enabled;
 
     /**
      * Initialize  default application configuration.
@@ -57,6 +59,7 @@ class Configuration
         self::$application_description = 'Your description for the application';
         self::$application_query_data = [];
         self::$application_resource_file = dirname(__DIR__).DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.'resources.xml';
+        self::$application_is_maintenance_mode_enabled = false;
     }
 
     /**
@@ -319,5 +322,25 @@ class Configuration
     protected static function getStaticRoute()
     {
         return self::$application_static_routes;
+    }
+
+    /**
+     * Set maintenance mode enabled or disabled
+     * set true for enabled and false for disabled
+     * @param $prm_isEnabled Boolean 
+     */
+    public static function enableMaintenance($prm_isEnabled = false)
+    {
+        self::$application_is_maintenance_mode_enabled = $prm_isEnabled;
+    }
+
+    /**
+     * Get the status of maintenance mode
+     * returns true if enabled and false if disabled
+     * @return Boolean
+     */
+    public static function isMaintenanceEnabled()
+    {
+        return self::$application_is_maintenance_mode_enabled;
     }
 }

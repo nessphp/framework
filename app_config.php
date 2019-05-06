@@ -71,19 +71,32 @@ Configuration::setVersion('1.0.0');
  */
 Configuration::setDescription('AppDescription');
 
-//Configuration::setUrlProtected(TRUE);
-//Configuration::UnwantedParameters(array("'", "-"));
+/*
+ * === [ Application Maintenance Mode ] ===
+ * This configuration is used to set maintenance mode of your application.
+ * if Maintenance Mode is enabled user will see a message on screen like 
+ * 'Under Maintenance'
+ */
+Configuration::enableMaintenance(false);
 
-/**-------------------*/
-/** Application Class */
-/**-------------------*/
+/**
+ *  === [ Application Url Protection ] ===
+ * Protect your website from unwanted parameters, You can enable 
+ * this feature for preventing visit with unwanted parameters 
+ * supplied in array below.
+ */
+Configuration::setUrlProtected(false);
+Configuration::UnwantedParameters(array("'", "-"));
+
+
+/**---------------------------------------------------------*/
+/**                  Application Class                      */
+/**---------------------------------------------------------*/
 class Application
 {
     /**
      * This method is called when your application is loaded. You can register
      * your object mappers or do other configurations.
-     *
-     * @return mixed|void Return anything or nothing.
      */
     public function Register()
     {

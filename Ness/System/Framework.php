@@ -98,6 +98,10 @@ class Framework
         // 1st level security.[optional: can be controlled via app_config.php]
         self::checkUrlProtection($tokens);
 
+        //Check if maintenance mode enabled. Show 'under maintenance' message if enabled.
+        self::checkMaintenanceMode();
+
+
         // Look for controllers and run the app.
         $controllerName = $tokens[$tk1].'Controller';
         if (file_exists(conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.$area.$controllerName.'.php')) {
@@ -154,6 +158,25 @@ class Framework
                     }
                 }
             }
+        }
+    }
+
+    /**
+     * @ignore
+     */
+    private static function checkMaintenanceMode()
+    {
+        if(conf::isMaintenanceEnabled())
+        {
+            $file = conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'MaintenanceMode.php';
+            if(file_exists($file))
+            {
+                require_once $file;
+                $controllerName = 'MaintenanceMode';
+                $controller = new $controllerName();
+                $controller->ShowMessageScreen();
+                exit();
+            }   
         }
     }
 }
