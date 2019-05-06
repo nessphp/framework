@@ -49,6 +49,36 @@ namespace Ness\Log
                     break;
             }
         }
+
+        /**
+         * Clear Log Files
+         * 
+         * @param type $logType    LogProvider log type, Do not set a type for clearing all log files
+         */
+        public static function ClearLogs($logType = -1)
+        {
+            switch ($logType) {
+                case 0:
+                    //ERROR
+                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Errors.txt', "");
+                    break;
+                case 1:
+                    //WARNING
+                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Warnings.txt', "");
+                    break;
+                case 2:
+                    //OUTPUTMESSAGE
+                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Outputs.txt', "");
+                    break;
+
+                default:
+                    //All Log Files
+                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Outputs.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Warnings.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Errors.txt', "");
+                    break;
+            }
+        }
     }
 
 }
