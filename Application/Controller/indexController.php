@@ -9,6 +9,6 @@ class indexController extends myController
         /**
          * Test Framework libraries 
          */
-        $this->View->Render('welcome.php');
+        $this->View->Render('welcome.php');        
     }
 }

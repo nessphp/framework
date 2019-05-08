@@ -11,6 +11,7 @@
  namespace Ness\UI;
 
  use Ness\Configuration as conf;
+ use Ness\IO\SpecialDirectory;
  use const E_USER_ERROR;
  use const ENT_QUOTES;
  use function file_exists;
@@ -137,6 +138,19 @@
     public static function includeFile($fileName = '')
     {
         return rPath.$fileName;
+    }
+
+    /**
+     * Include a widget from Application/Content/widget path
+     *
+     * @param string $fileName File name; ex: widget.html
+     */
+    public static function insertWidget($filename){
+        $wfile = SpecialDirectory::ContentFolder().DIRECTORY_SEPARATOR.'widget'.DIRECTORY_SEPARATOR.$filename;
+        if(file_exists($wfile))
+        {
+            include_once $wfile;
+        }
     }
 
     /**
