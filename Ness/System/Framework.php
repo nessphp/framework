@@ -110,9 +110,29 @@ class Framework
             if (isset($tokens[$tk2]) && ($tokens[$tk2] != '')) {
                 $actionName = $tokens[$tk2].'Action';
                 if (isset($tokens[$tk3])) {
-                    $controller->{$actionName}($tokens[$tk3]);
+                    if(method_exists($controller, $actionName))
+                    {
+                        //Action available with parameters, Load Action
+                        $controller->{$actionName}($tokens[$tk3]);
+                    }else{
+                        //Action Not available show error screen
+                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'NotFoundError.php';
+                        $controllerName = 'NotFoundError';
+                        $controller = new $controllerName();
+                        $controller->ActionNotFound();
+                    }
                 } else {
-                    $controller->{$actionName}();
+                    if(method_exists($controller, $actionName))
+                    {
+                        //Action available without parameters, Load Action
+                        $controller->{$actionName}();
+                    }else{
+                        //Action Not available show error screen
+                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'NotFoundError.php';
+                        $controllerName = 'NotFoundError';
+                        $controller = new $controllerName();
+                        $controller->ActionNotFound();
+                    }  
                 }
             } else {
                 // Default entry point (IndexAction), if action not specified

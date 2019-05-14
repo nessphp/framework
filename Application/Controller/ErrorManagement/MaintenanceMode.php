@@ -15,7 +15,8 @@ class MaintenanceMode extends MaintenanceModeController
     {
         if(Configuration::isMaintenanceEnabled())
         {
-            $this->Content->Render('Application is Under Maintenance');
+            $this->View->Render('systemArea'.DIRECTORY_SEPARATOR.'maintenancemodeView.php');
+            //$this->Content->Render('Application is Under Maintenance');
         }
     }
 }

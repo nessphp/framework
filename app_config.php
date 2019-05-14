@@ -57,7 +57,7 @@ Configuration::setRoot(false);
  * === [ Application Name ] ===
  * This configuration is used to set name of your application.
  */
-Configuration::setTitle('EmptyApp');
+Configuration::setTitle('Hello World');
 
 /*
  * === [ Application Version ] ===
@@ -69,7 +69,7 @@ Configuration::setVersion('1.0.0');
  * === [ Application Description ] ===
  * This configuration is used to set description of your application.
  */
-Configuration::setDescription('AppDescription');
+Configuration::setDescription('Ness PHP is a solid web framework for fast and secure web applications.');
 
 /*
  * === [ Application Maintenance Mode ] ===
@@ -86,7 +86,7 @@ Configuration::enableMaintenance(false);
  * supplied in array below.
  */
 Configuration::setUrlProtected(false);
-Configuration::UnwantedParameters(array("'", "-"));
+Configuration::UnwantedParameters(array("'"));
 
 
 /**---------------------------------------------------------*/

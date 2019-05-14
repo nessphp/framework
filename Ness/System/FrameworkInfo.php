@@ -20,7 +20,7 @@ namespace Ness\System
          */
         public static function VersionNumber()
         {
-            return '0.0.0@status';
+            return '1.0.0@development';
         }
 
         /**
@@ -28,7 +28,7 @@ namespace Ness\System
          */
         public static function LastUpdate()
         {
-            return '0.0 January First Update ';
+            return '1.0 Initial Release';
         }
     }
 

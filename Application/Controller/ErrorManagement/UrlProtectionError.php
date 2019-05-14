@@ -11,7 +11,8 @@ class UrlProtectionError extends ErrorHandlingController
 
     public function ShowErrorPage($url = 'NOT DEFINED', $charset = 'NOT DEFINED')
     {
-        $this->View->lblMsg = "Sorry for this restriction but we found <b> {$charset} </b> a bit harmful for our application. Please check  <b>{$url} </b> and load this page again.";
-        $this->Content->Render($this->View->lblMsg);
+        $this->View->page_title = 'Ness Security Guard';
+        $this->View->page_message = "Hey! It is so sad to say you can not continue to our website with the parameter <b>[{$charset}]</b>. Please check the <b>{$url}</b> in the url and try again.";
+        $this->View->Render('systemArea'.DIRECTORY_SEPARATOR.'protectionerrorView.php');
     }
 }

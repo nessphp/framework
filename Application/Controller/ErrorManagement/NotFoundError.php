@@ -13,7 +13,9 @@ class NotFoundError extends ErrorHandlingController
      */
     public function ControllerNotFound()
     {
-        $this->Content->Render('URL/Controller Not Found :)');
+        $this->View->page_title = 'Controller Not Found';
+        $this->View->page_message = 'Hey! the page you are looking for is not available in our database. We are sorry for that.';
+        $this->View->Render('systemArea'.DIRECTORY_SEPARATOR.'notfoundView.php');
     }
 
     /**
@@ -23,7 +25,8 @@ class NotFoundError extends ErrorHandlingController
     {
         // This Action will be called if a method called in url is not found. This feature needs to be enabled
         // in base class of framework. Please check framework.php::Run method.
-        $this->View->lblMsg = 'The page you are looking for is not available.';
-        $this->Content->Render($this->View->lblMsg);
+        $this->View->page_title = 'Action Not Found';
+        $this->View->page_message = 'Hey! the page you are looking for is not available in our database. We are sorry for that.';
+        $this->View->Render('systemArea'.DIRECTORY_SEPARATOR.'notfoundView.php');
     }
 }
