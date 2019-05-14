@@ -1,0 +1,47 @@
+{
+    "name": "nessphp/framework",
+    "description": "Source files of ness php framework. Used for developer builds or source code improvement.",
+    "type": "project",
+    "keywords": [
+        "ness",
+        "php",
+        "framework",
+        "mvc-framework",
+        "secure",
+        "elgant-coding",
+        "extremely-fast",
+        "easy-to-use",
+        "php7-optimized"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sinan SALIH",
+            "email": "snnslh@outlook.com",
+            "homepage": "https://nessphp.github.io",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ness\\": "./Ness"
+        },
+        "files": [ "./Ness/System/autoload.php" ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ness\\": "./Ness"
+        }
+    },
+    "require": {
+        "php": ">=5.6"
+    },
+    "support": {
+        "email": "nessphp@gmail.com",
+        "docs": "https://nessphp.github.io/docs/index.html"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}
