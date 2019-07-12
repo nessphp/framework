@@ -20,6 +20,9 @@ Welcome to Ness PHP Framework. Ness PHP is an excellent but straightforward appl
 > There are lots of features of Ness PHP to explore. Please keep tracking for the User Manual. We are working on user manual to be ready as soon as possible.
 
 
+## User Guide
+You can access all topics of Ness PHP's from  this link:
+[Ness PHP User Manual](https://nessphp.github.io/ "Ness PHP User Manual")
 
 ## Who is it for ?
 In simple words; it is for you...
