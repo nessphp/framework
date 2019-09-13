@@ -98,7 +98,7 @@
     <center>
         <a href="http://nessphp.github.io/">Home Page</a> 
         <a href="https://github.com/nessphp">GitHub</a> 
-        <a href="https://github.com/nessphp/docs/index.html">Documentation</a> 
+        <a href="http://nessphp.github.io/">Documentation</a> 
     </center>
     
 

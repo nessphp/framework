@@ -66,7 +66,7 @@ class Url
     /**
      * @ignore
      */
-    public function getArea($willWork = true)
+    public static function getArea($willWork = true)
     {
         $application_query_data = conf::getQuery();
         if (!empty($application_query_data['p'])) {
