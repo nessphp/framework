@@ -68,9 +68,10 @@ class Url
      */
     public static function getArea($willWork = true)
     {
-        $application_query_data = conf::getQuery();
-        if (!empty($application_query_data['p'])) {
-            return $application_query_data['p'].'Area'.DIRECTORY_SEPARATOR;
+
+        $application_query_data = Url::getData("p");
+        if (!empty($application_query_data)) {
+            return $application_query_data.'Area'.DIRECTORY_SEPARATOR;
         } else {
             return '';
         }
@@ -111,22 +112,25 @@ class Url
     }
 
     /**
-     * Returns posted values in your url with 'get' method.
+     * Get parameter values from your url.
+     * If parameter not found returns False.Please
+     * set $paramid for getting a specific value. Set $paramid to Null
+     * for getting an array with parameters.
      *
      * @param string $paramid Name of your entry
-     *
-     * @return string Application query data.
      */
     public static function getData($paramid = null)
     {
-        $application_query_data = conf::getQuery();
-        if (is_null($paramid)) {
-            return $application_query_data;
-        } else {
-            if (empty($application_query_data[$paramid])) {
-                return '-1';
-            } else {
-                return $application_query_data[$paramid];
+        if(isset(parse_url(Url::getUrl())['query'])){
+            parse_str(parse_url(Url::getUrl())['query'], $query);
+            if(is_null($paramid)){
+                return $query;
+            }else{
+                if(!isset($query[$paramid])){
+                    return false;
+                }else{
+                    return $query[$paramid];
+                }
             }
         }
     }
