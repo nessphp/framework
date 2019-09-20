@@ -34,10 +34,8 @@
         }
     },
     "require": {
-        "php": ">=5.6",
-        "nessphp/framework": "dev-master@dev"
+        "php": ">=5.6"
     },
-    "minimum-stability": "dev",
     "support": {
         "email": "nessphp@gmail.com",
         "docs": "https://nessphp.github.io/docs/index.html"
