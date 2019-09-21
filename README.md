@@ -44,9 +44,8 @@ In simple words; it is for you...
 You can use the composer to get the last version of Ness PHP Framework. 
 
 
-## Support Ness
-Ness PHP is completely free(and always will be) for anyone organisations & personal use. It's maintained under MIT LICENCE. If you want to donate our free work to support Ness PHP's developers you can [navigate here](https://www.paypal.me/sinansalichasan) to get more information.
-
+## Support Ness PHP Framework
+Ness PHP is completely free(and always will be) for anyone organisations & personal use. It's maintained under MIT LICENCE. If you want to support Ness PHP you can [use this link](https://www.buymeacoffee.com/cX4kRUvdp)
 
 ## Contact
 For any suggestions or security vulnerabilities you can contact to  Ness PHP author via email from [nessphp@gmail.com](nessphp@gmail.com) 
