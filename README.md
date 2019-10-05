@@ -20,12 +20,10 @@ Welcome to Ness PHP Framework. Do you need a web framework with minimized traini
    - [Advanced Forms Class](https://nessphp.github.io/docs/pages/forms.html) you can use Forms class for creating powerfull and [secure](https://nessphp.github.io/docs/pages/forms.html#csrf_protection) forms. 
    - [File Uploads](https://nessphp.github.io/docs/pages/fileupload.html) are made to be easy.
 
-> There are lots of features of Ness PHP to explore. Please keep tracking for the User Manual. We are working on user manual to be ready as soon as possible.
-
 
 ## User Guide
 You can access all topics of Ness PHP's from  this link:
-[Ness PHP User Manual](https://nessphp.github.io/ "Ness PHP User Manual")
+[Ness PHP User Manual](https://nessphp.github.io/docs/index.html "Ness PHP User Manual")
 
 ## Who is it for ?
 In simple words; it is for you...
