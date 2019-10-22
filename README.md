@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="120" src="https://raw.githubusercontent.com/nessphp/media-repo/master/Logo/ness_logo_text_corner_bottom_developers.png">
+  <img width="120" src="https://raw.githubusercontent.com/nessphp/media-repo/master/Logo/ness_logo.png">
 </p>
 
 ## Ness PHP Framework (Developer Builds)
@@ -34,13 +34,6 @@ In simple words; it is for you...
   - An easy to use template engine.
   
   
-## Download
-
-<blockquote>
-  composer create-project nessphp/framework
-</blockquote>
-You can use the composer to get the last version of Ness PHP Framework. 
-
 
 ## Support Ness PHP Framework
 Ness PHP is completely free(and always will be) for anyone organisations & personal use. It's maintained under MIT LICENCE. If you want to support Ness PHP you can [use this link](https://www.paypal.me/sinansalichasan)
