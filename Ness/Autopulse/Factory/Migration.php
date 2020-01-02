@@ -1,18 +1,20 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Autopulse\Factory
-{
-    use Ness\Autopulse\DbCommand;
+namespace Ness\Autopulse\Factory {
 
-     /**
+    use Ness\Autopulse\DbCommand;
+    use FFI\Exception;
+
+    /**
      * Migration class is used to manage; create
      * and drop database operations of your project.
      */
@@ -26,14 +28,15 @@ namespace Ness\Autopulse\Factory
          *
          * @return bool Returns true if migration completed.
          */
-        public static function Up($schema, $db_instance){
-            if(self::will_update_run($schema->getVersion(), $schema->getName())){
+        public static function Up($schema, $db_instance)
+        {
+            if (self::will_update_run($schema->getVersion(), $schema->getName())) {
                 $generated_script = '';
-                $generated_script .= 'DROP DATABASE IF EXISTS '.$schema->getName()."; \r\n";
-                $generated_script .= 'CREATE DATABASE IF NOT EXISTS '.$schema->getName()."; \r\n";
-                $generated_script .= 'USE '.$schema->getName()."; \r\n\r\n";
-                $generated_script .= $schema->getCreateTableScript()."\r\n";
-                $generated_script .= $schema->getForeignKey()."\r\n";
+                $generated_script .= 'DROP DATABASE IF EXISTS ' . $schema->getName() . "; \r\n";
+                $generated_script .= 'CREATE DATABASE IF NOT EXISTS ' . $schema->getName() . "; \r\n";
+                $generated_script .= 'USE ' . $schema->getName() . "; \r\n\r\n";
+                $generated_script .= $schema->getCreateTableScript() . "\r\n";
+                $generated_script .= $schema->getForeignKey() . "\r\n";
 
                 try {
                     $cmd_create = new DbCommand($generated_script, $db_instance->Source());
@@ -44,13 +47,13 @@ namespace Ness\Autopulse\Factory
                 } catch (Exception $e) {
                     return false;
                 }
-            }else{
+            } else {
                 return false;
             }
 
             /***
             
-            **/
+             **/
 
             return true;
         }
@@ -63,15 +66,16 @@ namespace Ness\Autopulse\Factory
          *
          * @return bool
          */
-        public static function Down($schema, $db_instance){
-            try{
-                $drop_command_string = "DROP DATABASE IF EXISTS ".$schema->getName().";";
+        public static function Down($schema, $db_instance)
+        {
+            try {
+                $drop_command_string = "DROP DATABASE IF EXISTS " . $schema->getName() . ";";
                 $drop_command = new DbCommand($drop_command_string, $db_instance->Source());
                 $drop_command->Execute();
                 $drop_command->CloseCommand();
                 $db_instance->Close();
                 return true;
-            }catch(Exception $e){
+            } catch (Exception $e) {
                 return false;
             }
         }
@@ -85,13 +89,14 @@ namespace Ness\Autopulse\Factory
          *
          * @return bool
          */
-        public static function Synch($schema, $db_instance){
+        public static function Synch($schema, $db_instance)
+        {
             $generated_script = '';
-            $generated_script .= 'DROP DATABASE IF EXISTS '.$schema->getName()."; \r\n";
-            $generated_script .= 'CREATE DATABASE IF NOT EXISTS '.$schema->getName()."; \r\n";
-            $generated_script .= 'USE '.$schema->getName()."; \r\n\r\n";
-            $generated_script .= $schema->getCreateTableScript()."\r\n";
-            $generated_script .= $schema->getForeignKey()."\r\n";
+            $generated_script .= 'DROP DATABASE IF EXISTS ' . $schema->getName() . "; \r\n";
+            $generated_script .= 'CREATE DATABASE IF NOT EXISTS ' . $schema->getName() . "; \r\n";
+            $generated_script .= 'USE ' . $schema->getName() . "; \r\n\r\n";
+            $generated_script .= $schema->getCreateTableScript() . "\r\n";
+            $generated_script .= $schema->getForeignKey() . "\r\n";
             try {
                 $cmd_create = new DbCommand($generated_script, $db_instance->Source());
                 $cmd_create->Execute();
@@ -111,26 +116,27 @@ namespace Ness\Autopulse\Factory
          * @param $schema_version Integer
          * @return bool
          */
-        private static function will_update_run($schema_version='-1', $schema_name='default'){
-            $dbv_path = dirname(dirname(dirname(__DIR__))).DIRECTORY_SEPARATOR.'ness_logs'.DIRECTORY_SEPARATOR.$schema_name.'.dbv';
+        private static function will_update_run($schema_version = '-1', $schema_name = 'default')
+        {
+            $dbv_path = dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'ness_logs' . DIRECTORY_SEPARATOR . $schema_name . '.dbv';
             $dbv = "-1";
 
             #Return true for proceed to migration
-            if(is_file($dbv_path)){
+            if (is_file($dbv_path)) {
                 //Check the version number of schema
                 $dbv = file_get_contents($dbv_path);
-                if($dbv < (int)$schema_version || empty($dbv)){
+                if ($dbv < (int) $schema_version || empty($dbv)) {
                     //local database version is greater than remote database
                     return true;
-                }else{
+                } else {
                     return false;
                 }
-            }else{
+            } else {
                 //Check if available log file exists.
-                if(file_exists($dbv_path)){
+                if (file_exists($dbv_path)) {
                     //Can not track the version number of Schema file from log. Do not proceed.
-                    return false; 
-                }else{
+                    return false;
+                } else {
                     //This is probably the first time of Migration::Up command. Proceed to table creation.
                     return true;
                 }
@@ -146,24 +152,25 @@ namespace Ness\Autopulse\Factory
          * @param $schema_version Integer
          * @return void
          */
-        private static function update_schema_version($schema_version='-1', $schema_name='default'){
-            $dbv_path = __DIR__.DIRECTORY_SEPARATOR.'ness_logs'.DIRECTORY_SEPARATOR.$schema_name.'.dbv';
-            if(is_file($dbv_path)){
+        private static function update_schema_version($schema_version = '-1', $schema_name = 'default')
+        {
+            $dbv_path = __DIR__ . DIRECTORY_SEPARATOR . 'ness_logs' . DIRECTORY_SEPARATOR . $schema_name . '.dbv';
+            if (is_file($dbv_path)) {
                 //log exists update version number
-                if(is_writable($dbv_path)){
+                if (is_writable($dbv_path)) {
                     //log file is writable, update 
-                    file_put_contents($dbv_path, (string)$schema_version);
-                }else{
+                    file_put_contents($dbv_path, (string) $schema_version);
+                } else {
                     //give permission to log file.
                     chmod($dbv_path, 0755);
-                    file_put_contents($dbv_path, (string)$schema_version);
+                    file_put_contents($dbv_path, (string) $schema_version);
                 }
-            }else{
+            } else {
                 //probably first run create log file with lsat version of schema.
-                mkdir(dirname(dirname(dirname(__DIR__))).DIRECTORY_SEPARATOR.'ness_logs');
+                mkdir(dirname(dirname(dirname(__DIR__))) . DIRECTORY_SEPARATOR . 'ness_logs');
                 $handle = fopen($dbv_path, 'w');
                 fclose($handle);
-                file_put_contents($dbv_path, (string)$schema_version);
+                file_put_contents($dbv_path, (string) $schema_version);
             }
         }
     }

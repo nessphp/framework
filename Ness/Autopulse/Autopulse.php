@@ -1,17 +1,19 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Autopulse
-{
+namespace Ness\Autopulse {
 
-  /**
+    use FFI\Exception;
+
+    /**
      * With this library you can easily access and manage your database.
      * This class, which contains functions that make it easier to process your data.
      * AutoPulse will save you writing complex dml queries.
@@ -34,20 +36,20 @@ namespace Ness\Autopulse
                 //create command
                 $cmdTable = self::nameOptimizer(get_class($modelForm));
 
-                $command = 'insert into '.$cmdTable.'(';
+                $command = 'insert into ' . $cmdTable . '(';
                 foreach ($modelForm as $key => $value) {
-                    $command .= $key.',';
+                    $command .= $key . ',';
                 }
-                $command = rtrim($command, ',').') values (';
+                $command = rtrim($command, ',') . ') values (';
                 foreach ($modelForm as $key => $value) {
-                    $command .= ' :'.$key.' ,';
+                    $command .= ' :' . $key . ' ,';
                 }
-                $command = rtrim($command, ',').');';
+                $command = rtrim($command, ',') . ');';
                 //define database
                 $m_cmd = new DbCommand($command, $dbclassinstance);
 
                 foreach ($modelForm as $key => $value) {
-                    $m_cmd->SetParameter(':'.$key, $value);
+                    $m_cmd->SetParameter(':' . $key, $value);
                 }
                 //load
                 $m_cmd->Execute();
@@ -71,22 +73,22 @@ namespace Ness\Autopulse
         {
             try {
                 //create command
-                $command = 'insert into '.$tableName.'(';
+                $command = 'insert into ' . $tableName . '(';
                 foreach ($fieldList as $key => $value) {
-                    $command .= $key.',';
+                    $command .= $key . ',';
                 }
-                $command = rtrim($command, ',').') values (';
+                $command = rtrim($command, ',') . ') values (';
                 foreach ($fieldList as $key => $value) {
-                    $command .= ' :'.$key.' ,';
+                    $command .= ' :' . $key . ' ,';
                 }
-                $command = rtrim($command, ',').');';
+                $command = rtrim($command, ',') . ');';
                 //define database
                 $m_cmd = new DbCommand($command, $dbclassinstance);
                 //define query in database
 
                 //bind values
                 foreach ($fieldList as $key => $value) {
-                    $m_cmd->SetParameter(':'.$key, $value);
+                    $m_cmd->SetParameter(':' . $key, $value);
                 }
                 //load
                 $m_cmd->Execute();
@@ -113,15 +115,15 @@ namespace Ness\Autopulse
                 //get table name from model
                 $table = self::nameOptimizer($tableName);
                 //command builder;
-                $command = 'update '.$table.' set ';
+                $command = 'update ' . $table . ' set ';
                 if ($fieldList != null) {
                     foreach ($fieldList as $key => $value) {
-                        $command .= ' '.$key.'=:'.$key.',';
+                        $command .= ' ' . $key . '=:' . $key . ',';
                     }
                 }
                 $command = rtrim($command, ',');
                 if ($whereOption != null) {
-                    $command .= ' where '.$whereOption.' ';
+                    $command .= ' where ' . $whereOption . ' ';
                 }
 
                 //parameter binder;
@@ -130,7 +132,7 @@ namespace Ness\Autopulse
                 //define query in database
                 if ($fieldList != null) {
                     foreach ($fieldList as $key => $value) {
-                        $m_cmd->SetParameter(':'.$key, $value);
+                        $m_cmd->SetParameter(':' . $key, $value);
                     }
                 }
                 $m_cmd->Execute();
@@ -156,9 +158,9 @@ namespace Ness\Autopulse
                 //get table name from model
                 $table = self::nameOptimizer(get_class($modelForm));
                 //command builder;
-                $command = 'delete from '.$table.' ';
+                $command = 'delete from ' . $table . ' ';
                 if ($whereOption != null) {
-                    $command .= 'where '.$whereOption;
+                    $command .= 'where ' . $whereOption;
                 }
                 //parameter binder;
                 //define database
@@ -188,9 +190,9 @@ namespace Ness\Autopulse
                 //get table name from model
                 $table = self::nameOptimizer($tableName);
                 //command builder;
-                $command = 'delete from '.$table.' ';
+                $command = 'delete from ' . $table . ' ';
                 if ($whereOption != null) {
-                    $command .= 'where '.$whereOption;
+                    $command .= 'where ' . $whereOption;
                 }
                 //parameter binder;
                 //define database
@@ -219,4 +221,3 @@ namespace Ness\Autopulse
         }
     }
 }
-

@@ -1,22 +1,22 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Tool
-{
+namespace Ness\Tool {
 
     /**
      * This is a simple benchmarking class for Ness PHP framework.
      **/
     class Benchmark
     {
-        private $pointList;		//Array for saved benchmark.
+        private $pointList;        //Array for saved benchmark.
 
         /**
          * Initialize Benchmark class
@@ -66,7 +66,7 @@ namespace Ness\Tool
         public function SavePoint($name_for, $started)
         {
             if (isset($started)) {
-                $this->pointList[] = [$name_for=>$started];
+                $this->pointList[] = [$name_for => $started];
             }
         }
 

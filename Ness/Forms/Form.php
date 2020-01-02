@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Forms
-{
+namespace Ness\Forms {
+
     use Ness\Model;
 
     /**
@@ -63,13 +64,13 @@ namespace Ness\Forms
             $creator = '';
             $formName = $this->formName;
             if (is_null($attr)) {
-                $creator .= '<form name="'.$formName.'" action="'.\Ness\Url::getUrl().'" >'.self::EOL;
+                $creator .= '<form name="' . $formName . '" action="' . \Ness\Url::getUrl() . '" >' . self::EOL;
             } else {
-                $creator = '<form name="'.$formName.'" action="'.\Ness\Url::getUrl().'" ';
+                $creator = '<form name="' . $formName . '" action="' . \Ness\Url::getUrl() . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
-                $creator .= '>'.self::EOL;
+                $creator .= '>' . self::EOL;
             }
 
             return $creator;
@@ -107,7 +108,7 @@ namespace Ness\Forms
         public function setElement($element)
         {
             $creator = '';
-            $creator .= $element.self::EOL;
+            $creator .= $element . self::EOL;
 
             return $creator;
         }
@@ -119,7 +120,7 @@ namespace Ness\Forms
          */
         public function FinishForm()
         {
-            $creator = '</form>'.self::EOL;
+            $creator = '</form>' . self::EOL;
 
             return $creator;
         }

@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Helpers
-{
+namespace Ness\Helpers {
 
     /**
      * This is a helper class for strings. It's adds various features to srings.
@@ -101,7 +101,7 @@ namespace Ness\Helpers
             $temp = explode($exlode_from, $this->sting_data);
             $data = '';
             foreach ($temp as $value) {
-                $data .= $prefix.$value.' ';
+                $data .= $prefix . $value . ' ';
             }
 
             return $data;
@@ -119,7 +119,7 @@ namespace Ness\Helpers
             $temp = explode($exlode_from, $this->sting_data);
             $data = '';
             foreach ($temp as $value) {
-                $data .= $value.$suffix.' ';
+                $data .= $value . $suffix . ' ';
             }
 
             return $data;
@@ -138,11 +138,10 @@ namespace Ness\Helpers
             $temp = explode($exlode_from, $this->sting_data);
             $data = '';
             foreach ($temp as $value) {
-                $data .= $prefix.$value.$suffix.' ';
+                $data .= $prefix . $value . $suffix . ' ';
             }
 
             return $data;
         }
     }
-
 }

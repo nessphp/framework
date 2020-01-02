@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Tool
-{
+namespace Ness\Tool {
 
     /**
      *   Ness PHP ftp library.
@@ -155,7 +155,7 @@ namespace Ness\Tool
                     return false;
                 }
             } else {
-                $this->ftpErrorLog = 'Could not change name for file or directory '.$oldName;
+                $this->ftpErrorLog = 'Could not change name for file or directory ' . $oldName;
             }
         }
 
@@ -247,7 +247,7 @@ namespace Ness\Tool
          */
         public function SetPermission($ftpFile = null, $Filepermission = null)
         {
-            if (isset($this->ftpConnection,$ftpFile)) {
+            if (isset($this->ftpConnection, $ftpFile)) {
                 if (ftp_chmod($this->ftpConnection, $Filepermission, $ftpFile) !== false) {
                     return true;
                 } else {

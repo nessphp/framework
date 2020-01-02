@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Autopulse\Factory
-{
+namespace Ness\Autopulse\Factory {
     /**
      * Query Builder class is used to generate queries and retrieve records from
      * your database. Using a query builder class will give you a more
@@ -139,14 +139,14 @@ namespace Ness\Autopulse\Factory
                     foreach ($what as $key => $value) {
                         $spc .= " {$key}'{$value}' AND";
                     }
-                    $this->conditions .= rtrim($spc, 'AND').' ';
+                    $this->conditions .= rtrim($spc, 'AND') . ' ';
                 } else {
                     $this->conditions .= ' AND ';
                     $spc = '';
                     foreach ($what as $k => $v) {
                         $spc .= " {$k}'{$v}' AND";
                     }
-                    $this->conditions .= rtrim($spc, 'AND').' ';
+                    $this->conditions .= rtrim($spc, 'AND') . ' ';
                 }
             } else {
                 //parametrelerden al
@@ -178,14 +178,14 @@ namespace Ness\Autopulse\Factory
                     foreach ($what as $key => $value) {
                         $spc .= " {$key}'{$value}' OR";
                     }
-                    $this->conditions .= rtrim($spc, 'OR').' ';
+                    $this->conditions .= rtrim($spc, 'OR') . ' ';
                 } else {
                     $this->conditions .= ' OR ';
                     $spc = '';
                     foreach ($what as $k => $v) {
                         $spc .= " {$k}'{$v}' OR";
                     }
-                    $this->conditions .= rtrim($spc, 'OR').' ';
+                    $this->conditions .= rtrim($spc, 'OR') . ' ';
                 }
             } else {
                 if (empty($this->conditions)) {
@@ -221,7 +221,7 @@ namespace Ness\Autopulse\Factory
 
                     break;
 
-                 case 'front':
+                case 'front':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} LIKE  '{$x}{$islike}' ";
                     } else {
@@ -229,7 +229,7 @@ namespace Ness\Autopulse\Factory
                     }
                     break;
 
-                 case 'end':
+                case 'end':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} LIKE  '{$islike}{$x}' ";
                     } else {
@@ -269,7 +269,7 @@ namespace Ness\Autopulse\Factory
 
                     break;
 
-                 case 'front':
+                case 'front':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} LIKE  '{$x}{$islike}' ";
                     } else {
@@ -277,7 +277,7 @@ namespace Ness\Autopulse\Factory
                     }
                     break;
 
-                 case 'end':
+                case 'end':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} LIKE  '{$islike}{$x}' ";
                     } else {
@@ -317,7 +317,7 @@ namespace Ness\Autopulse\Factory
 
                     break;
 
-                 case 'front':
+                case 'front':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} NOT LIKE  '{$x}{$islike}' ";
                     } else {
@@ -325,7 +325,7 @@ namespace Ness\Autopulse\Factory
                     }
                     break;
 
-                 case 'end':
+                case 'end':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} NOT LIKE  '{$islike}{$x}' ";
                     } else {
@@ -365,7 +365,7 @@ namespace Ness\Autopulse\Factory
 
                     break;
 
-                 case 'front':
+                case 'front':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} NOT LIKE  '{$x}{$islike}' ";
                     } else {
@@ -373,7 +373,7 @@ namespace Ness\Autopulse\Factory
                     }
                     break;
 
-                 case 'end':
+                case 'end':
                     if (empty($this->conditions)) {
                         $this->conditions .= " WHERE {$what} NOT LIKE  '{$islike}{$x}' ";
                     } else {
@@ -423,14 +423,14 @@ namespace Ness\Autopulse\Factory
                     foreach ($columns as $val) {
                         $spc .= "{$val},";
                     }
-                    $this->groupers .= rtrim($spc, ',').' ';
+                    $this->groupers .= rtrim($spc, ',') . ' ';
                 } else {
                     $this->groupers .= ', ';
                     $spc = '';
                     foreach ($columns as $val) {
                         $spc .= "{$val},";
                     }
-                    $this->groupers .= rtrim($spc, ',').' ';
+                    $this->groupers .= rtrim($spc, ',') . ' ';
                 }
             } else {
                 if (empty($this->groupers)) {
@@ -490,7 +490,7 @@ namespace Ness\Autopulse\Factory
             if (!empty($iseditableQuery)) {
                 return $iseditableQuery;
             } else {
-                $currentCommand = $this->frontFree.' '.$this->command.' '.$this->columns.' from '.$this->table.' '.$this->conditions.' '.$this->joiners.' '.$this->groupers.' '.$this->orderers.' '.$this->limiters.$this->endFree.' ';
+                $currentCommand = $this->frontFree . ' ' . $this->command . ' ' . $this->columns . ' from ' . $this->table . ' ' . $this->conditions . ' ' . $this->joiners . ' ' . $this->groupers . ' ' . $this->orderers . ' ' . $this->limiters . $this->endFree . ' ';
 
                 return trim($this->cmd_sender($currentCommand));
             }
@@ -641,13 +641,13 @@ namespace Ness\Autopulse\Factory
             if (is_array($params)) {
                 if (empty($this->columns)) {
                     foreach ($params as $value) {
-                        $this->columns .= ' '.$value.',';
+                        $this->columns .= ' ' . $value . ',';
                     }
                     $this->columns = rtrim($this->columns, ',');
                 } else {
                     $this->columns .= ', ';
                     foreach ($params as $value) {
-                        $this->columns .= ' '.$value.',';
+                        $this->columns .= ' ' . $value . ',';
                     }
                     $this->columns = rtrim($this->columns, ',');
                 }
@@ -655,7 +655,7 @@ namespace Ness\Autopulse\Factory
                 if (empty($this->columns)) {
                     $this->columns .= $params;
                 } else {
-                    $this->columns .= ', '.$params;
+                    $this->columns .= ', ' . $params;
                 }
             }
         }
@@ -668,13 +668,13 @@ namespace Ness\Autopulse\Factory
             if (is_array($params)) {
                 if (empty($this->table)) {
                     foreach ($params as $value) {
-                        $this->table .= ' '.$value.',';
+                        $this->table .= ' ' . $value . ',';
                     }
                     $this->table = rtrim($this->table, ',');
                 } else {
                     $this->table .= ', ';
                     foreach ($params as $value) {
-                        $this->table .= ' '.$value.',';
+                        $this->table .= ' ' . $value . ',';
                     }
                     $this->table = rtrim($this->table, ',');
                 }
@@ -682,7 +682,7 @@ namespace Ness\Autopulse\Factory
                 if (empty($this->table)) {
                     $this->table .= $params;
                 } else {
-                    $this->table .= ', '.$params;
+                    $this->table .= ', ' . $params;
                 }
             }
         }
@@ -706,5 +706,4 @@ namespace Ness\Autopulse\Factory
             $this->prevCommand = '';
         }
     }
-
 }

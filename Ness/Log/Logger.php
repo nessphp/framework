@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Log
-{
+namespace Ness\Log {
+
     use Ness\IO\FileSystem as fs;
     use Ness\IO\SpecialDirectory as SpecialDirectories;
 
@@ -32,20 +33,20 @@ namespace Ness\Log
             switch ($logType) {
                 case 0:
                     //ERROR
-                    fs::Append(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Errors.txt', "[{$logTitle}] : {$logMessage}");
+                    fs::Append(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Errors.txt', "[{$logTitle}] : {$logMessage}");
                     break;
                 case 1:
                     //WARNING
-                    fs::Append(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Warnings.txt', "[{$logTitle}] : {$logMessage}");
+                    fs::Append(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Warnings.txt', "[{$logTitle}] : {$logMessage}");
                     break;
                 case 2:
                     //OUTPUTMESSAGE
-                    fs::Append(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Outputs.txt', "[{$logTitle}] : {$logMessage}");
+                    fs::Append(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Outputs.txt', "[{$logTitle}] : {$logMessage}");
                     break;
 
                 default:
                     //OUTPUTS
-                    fs::Append(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Outputs.txt', "[{$logTitle}] : {$logMessage}");
+                    fs::Append(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Outputs.txt', "[{$logTitle}] : {$logMessage}");
                     break;
             }
         }
@@ -60,25 +61,24 @@ namespace Ness\Log
             switch ($logType) {
                 case 0:
                     //ERROR
-                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Errors.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Errors.txt', "");
                     break;
                 case 1:
                     //WARNING
-                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Warnings.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Warnings.txt', "");
                     break;
                 case 2:
                     //OUTPUTMESSAGE
-                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Outputs.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Outputs.txt', "");
                     break;
 
                 default:
                     //All Log Files
-                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Outputs.txt', "");
-                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Warnings.txt', "");
-                    fs::WriteFile(SpecialDirectories::OutputFolder().DIRECTORY_SEPARATOR.'Errors.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Outputs.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Warnings.txt', "");
+                    fs::WriteFile(SpecialDirectories::OutputFolder() . DIRECTORY_SEPARATOR . 'Errors.txt', "");
                     break;
             }
         }
     }
-
 }

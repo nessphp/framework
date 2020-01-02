@@ -1,17 +1,19 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 
-namespace Ness\Tool
-{
+namespace Ness\Tool {
+
     use Ness\Configuration as Conf;
+    use FFI\Exception;
 
     /**
      * Ness PHP Cookie Class
@@ -247,7 +249,7 @@ namespace Ness\Tool
         public static function DestroyAll()
         {
             try {
-                foreach ($_COOKIE as $key=>$data) {
+                foreach ($_COOKIE as $key => $data) {
                     setcookie($key, null);
                     unset($_COOKIE[$key]);
                 }

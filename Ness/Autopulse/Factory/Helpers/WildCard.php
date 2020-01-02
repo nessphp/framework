@@ -1,16 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Autopulse\Factory\Helpers
-{
-     /**
+namespace Ness\Autopulse\Factory\Helpers {
+    /**
      * Helpers for QueryBuilder.
      */
     class WildCard

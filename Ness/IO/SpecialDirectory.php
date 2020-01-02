@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\IO
-{
+namespace Ness\IO {
+
     use Ness\Configuration;
 
     /**
@@ -25,7 +26,7 @@ namespace Ness\IO
          */
         public static function ApplicationFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder();
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder();
         }
 
         /**
@@ -35,7 +36,7 @@ namespace Ness\IO
          */
         public static function FrameworkFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.'Ness';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . 'Ness';
         }
 
         /**
@@ -45,7 +46,7 @@ namespace Ness\IO
          */
         public static function ControllerFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller';
         }
 
         /**
@@ -55,7 +56,7 @@ namespace Ness\IO
          */
         public static function ConfigFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Config';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Config';
         }
 
         /**
@@ -65,7 +66,7 @@ namespace Ness\IO
          */
         public static function LibraryFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Library';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Library';
         }
 
         /**
@@ -75,7 +76,7 @@ namespace Ness\IO
          */
         public static function LanguageFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Language';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Language';
         }
 
         /**
@@ -85,7 +86,7 @@ namespace Ness\IO
          */
         public static function ModelFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Model';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Model';
         }
 
         /**
@@ -95,7 +96,7 @@ namespace Ness\IO
          */
         public static function OutputFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Output';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Output';
         }
 
         /**
@@ -105,7 +106,7 @@ namespace Ness\IO
          */
         public static function TemplateFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Template';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Template';
         }
 
         /**
@@ -115,7 +116,7 @@ namespace Ness\IO
          */
         public static function ViewFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'View';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'View';
         }
 
         /**
@@ -125,7 +126,7 @@ namespace Ness\IO
          */
         public static function ContentFolder()
         {
-            return dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Content';
+            return dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Content';
         }
     }
 }

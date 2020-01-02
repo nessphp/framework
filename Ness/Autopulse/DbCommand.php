@@ -1,17 +1,19 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Autopulse
-{
+namespace Ness\Autopulse {
+
     use PDO;
-     /**
+
+    /**
      * This library is used to run your queries.
      * If you are using MySql database you can use MySqlCommand
      * instead of DbCommand.
@@ -108,12 +110,12 @@ namespace Ness\Autopulse
 
         /**
          * Return last inserted id.
-         *
+         * @param $pdo_con Your Database Connection Source
          * @return mixed
          */
-        public function LastInsertedID()
+        public function LastInsertedID($pdo_con = null)
         {
-            return $this->statement->lastInsertId();
+            return $pdo_con->lastInsertId($pdo_con->Source());
         }
 
         /**
@@ -135,5 +137,4 @@ namespace Ness\Autopulse
             $this->statement->closeCursor();
         }
     }
-
 }

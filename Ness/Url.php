@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness;
@@ -35,9 +36,9 @@ class Url
     public static function RedirectToAction($controllerName, $action, $parameter = null)
     {
         if (isset($parameter) && !is_null($parameter)) {
-            return conf::getApplicationUrl().'/'.$controllerName.'/'.$action.'/'.$parameter;
+            return conf::getApplicationUrl() . '/' . $controllerName . '/' . $action . '/' . $parameter;
         } else {
-            return conf::getApplicationUrl().'/'.$controllerName.'/'.$action;
+            return conf::getApplicationUrl() . '/' . $controllerName . '/' . $action;
         }
     }
 
@@ -55,11 +56,11 @@ class Url
      */
     public static function RedirectToArea($Area = '', $controllerName = '', $action = '', $parameter = null)
     {
-        $addArea = '?p='.$Area;
+        $addArea = '?p=' . $Area;
         if (isset($parameter) && !is_null($parameter)) {
-            return conf::getApplicationUrl().'/'.$controllerName.'/'.$action.'/'.$parameter.$addArea;
+            return conf::getApplicationUrl() . '/' . $controllerName . '/' . $action . '/' . $parameter . $addArea;
         } else {
-            return conf::getApplicationUrl().'/'.$controllerName.'/'.$action.$addArea;
+            return conf::getApplicationUrl() . '/' . $controllerName . '/' . $action . $addArea;
         }
     }
 
@@ -71,7 +72,7 @@ class Url
 
         $application_query_data = Url::getData("p");
         if (!empty($application_query_data)) {
-            return $application_query_data.'Area'.DIRECTORY_SEPARATOR;
+            return $application_query_data . 'Area' . DIRECTORY_SEPARATOR;
         } else {
             return '';
         }
@@ -89,13 +90,13 @@ class Url
     public static function Redirect($url = '', $secs = '0')
     {
         if (!headers_sent()) {
-            header('Location: '.$url);
+            header('Location: ' . $url);
         } else {
             echo '<script type="text/javascript">';
-            echo 'window.location.href="'.$url.'";';
+            echo 'window.location.href="' . $url . '";';
             echo '</script>';
             echo '<noscript>';
-            echo '<meta http-equiv="refresh" content="'.$secs.'";url='.$url.'" />';
+            echo '<meta http-equiv="refresh" content="' . $secs . '";url=' . $url . '" />';
             echo '</noscript>';
         }
         exit;
@@ -108,7 +109,7 @@ class Url
      */
     public static function getUrl()
     {
-        return (isset($_SERVER['HTTPS']) ? 'https' : 'http')."://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        return (isset($_SERVER['HTTPS']) ? 'https' : 'http') . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     }
 
     /**
@@ -121,14 +122,14 @@ class Url
      */
     public static function getData($paramid = null)
     {
-        if(isset(parse_url(Url::getUrl())['query'])){
+        if (isset(parse_url(Url::getUrl())['query'])) {
             parse_str(parse_url(Url::getUrl())['query'], $query);
-            if(is_null($paramid)){
+            if (is_null($paramid)) {
                 return $query;
-            }else{
-                if(!isset($query[$paramid])){
+            } else {
+                if (!isset($query[$paramid])) {
                     return false;
-                }else{
+                } else {
                     return $query[$paramid];
                 }
             }

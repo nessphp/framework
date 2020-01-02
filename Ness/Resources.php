@@ -1,17 +1,19 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness
-{
+namespace Ness {
+
     use Ness\Configuration;
     use Ness\IO\FileSystem;
+    use FFI\Exception;
 
     /**
      * A resource class for storing and getting; String values, Images (as html tags) and other type of resources.
@@ -54,7 +56,7 @@ namespace Ness
                             }
                         }
                     } catch (Exception $e) {
-                        return 'Error: '.$e->getMessage();
+                        return 'Error: ' . $e->getMessage();
                     }
                 } else {
                     return;
@@ -93,11 +95,11 @@ namespace Ness
                                     $height = $image_object->attributes()->height;
                                 }
 
-                                return '<img src="'.$image_object.'" height="'.$height.'" width="'.$width.'" />';
+                                return '<img src="' . $image_object . '" height="' . $height . '" width="' . $width . '" />';
                             }
                         }
                     } catch (Exception $e) {
-                        return 'Error: '.$e->getMessage();
+                        return 'Error: ' . $e->getMessage();
                     }
                 } else {
                     return;
@@ -124,7 +126,7 @@ namespace Ness
                             }
                         }
                     } catch (Exception $e) {
-                        return 'Error: '.$e->getMessage();
+                        return 'Error: ' . $e->getMessage();
                     }
                 } else {
                     return;
@@ -132,5 +134,4 @@ namespace Ness
             }
         }
     }
-
 }

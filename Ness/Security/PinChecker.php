@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Security
-{
+namespace Ness\Security {
     /**
      * A pin chechker class for taking control and managing operations.
      * This class is a derivative of Object Mapper class.
@@ -55,5 +55,4 @@ namespace Ness\Security
             self::$pinlist = null;
         }
     }
-
 }

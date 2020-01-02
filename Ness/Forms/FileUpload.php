@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Forms
-{
+namespace Ness\Forms {
+
     use Ness\IO\SpecialDirectory as spd;
 
     /**
@@ -65,7 +66,7 @@ namespace Ness\Forms
          */
         public function UploadFile($form_element_name)
         {
-            $target_file = $this->upload_dir.basename($_FILES[$form_element_name]['name']);
+            $target_file = $this->upload_dir . basename($_FILES[$form_element_name]['name']);
             $is_uploaded = true;
             $dat_type = pathinfo($target_file, PATHINFO_EXTENSION);
 
@@ -86,8 +87,8 @@ namespace Ness\Forms
             if (file_exists($target_file)) {
                 //$is_uploaded = FALSE;
                 $t = time();
-                $append_form = date('Y_m_d', $t).(string) $t;
-                $target_file .= $append_form.'.'.$dat_type;
+                $append_form = date('Y_m_d', $t) . (string) $t;
+                $target_file .= $append_form . '.' . $dat_type;
             }
             $this->uploaded_file_name = $target_file;
 
@@ -160,7 +161,7 @@ namespace Ness\Forms
          */
         public function setDirectory($dir_to_upload = 'uploads')
         {
-            $this->upload_dir = spd::ApplicationFolder().DIRECTORY_SEPARATOR.$dir_to_upload.DIRECTORY_SEPARATOR;
+            $this->upload_dir = spd::ApplicationFolder() . DIRECTORY_SEPARATOR . $dir_to_upload . DIRECTORY_SEPARATOR;
             return $this;
         }
 

@@ -1,18 +1,18 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Security
-{
+namespace Ness\Security {
 
     use Ness\Security\RoleProvider;
-    
+
     /**
      * A basic role mananer class for Ness PHP Framework.
      * You can get available roles from database and set them in application register function,

@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\UI
-{
+namespace Ness\UI {
     /**
      * Simple html table class for Ness Framework.
      **/
@@ -29,15 +29,15 @@ namespace Ness\UI
          */
         public function __construct($attributes = null)
         {
-            $this->tableBase = '<table>'.self::EOL;
+            $this->tableBase = '<table>' . self::EOL;
             if (!isset($attributes)) {
-                $this->tableBase = '<table>'.self::EOL;
+                $this->tableBase = '<table>' . self::EOL;
             } else {
                 $this->tableBase = '<table ';
                 foreach ($attributes as $key => $value) {
-                    $this->tableBase .= ' '.$key.'="'.$value.'"';
+                    $this->tableBase .= ' ' . $key . '="' . $value . '"';
                 }
-                $this->tableBase .= ' >'.self::EOL;
+                $this->tableBase .= ' >' . self::EOL;
             }
         }
 
@@ -54,7 +54,7 @@ namespace Ness\UI
 
             if (isset($attributes)) {
                 foreach ($attributes as $key => $value) {
-                    $this->TableHeaderAttributes .= ' '.$key.'="'.$value.'"';
+                    $this->TableHeaderAttributes .= ' ' . $key . '="' . $value . '"';
                 }
             }
         }
@@ -72,23 +72,23 @@ namespace Ness\UI
             $headerItem = '';
             $headerContents = '';
             if (!isset($this->TableHeaderAttributes)) {
-                $headerItem .= '<tr>'.self::EOL;
+                $headerItem .= '<tr>' . self::EOL;
             } else {
-                $headerItem .= '<tr '.$this->TableHeaderAttributes.'>'.self::EOL;
+                $headerItem .= '<tr ' . $this->TableHeaderAttributes . '>' . self::EOL;
             }
 
             if (!isset($attributes)) {
                 foreach ($headers as $key => $value) {
-                    $headerContents .= '<th>'.$value.'</th>'.self::EOL;
+                    $headerContents .= '<th>' . $value . '</th>' . self::EOL;
                 }
             } else {
                 foreach ($headers as $Hkey => $Hvalue) {
                     foreach ($attributes as $Akey => $Avalue) {
-                        $headerContents .= '<th '.$Akey.'="'.$Avalue.'" >'.$Hvalue.'</th>'.self::EOL;
+                        $headerContents .= '<th ' . $Akey . '="' . $Avalue . '" >' . $Hvalue . '</th>' . self::EOL;
                     }
                 }
             }
-            $this->tableBase .= $headerItem.$headerContents.'</tr>'.self::EOL;
+            $this->tableBase .= $headerItem . $headerContents . '</tr>' . self::EOL;
 
             return $this;
         }
@@ -104,7 +104,7 @@ namespace Ness\UI
         {
             if (isset($attributes)) {
                 foreach ($attributes as $key => $value) {
-                    $this->RowAttributes .= ' '.$key.'="'.$value.'"';
+                    $this->RowAttributes .= ' ' . $key . '="' . $value . '"';
                 }
             }
         }
@@ -118,7 +118,7 @@ namespace Ness\UI
          */
         public function SpecialTag($tagcode)
         {
-            $this->tableBase .= ' '.$tagcode.' '.self::EOL;
+            $this->tableBase .= ' ' . $tagcode . ' ' . self::EOL;
 
             return $this;
         }
@@ -136,23 +136,23 @@ namespace Ness\UI
             $headerItem = '';
             $headerContents = '';
             if (!isset($this->RowAttributes)) {
-                $headerItem .= '<tr>'.self::EOL;
+                $headerItem .= '<tr>' . self::EOL;
             } else {
-                $headerItem .= '<tr  '.$this->RowAttributes.'>'.self::EOL;
+                $headerItem .= '<tr  ' . $this->RowAttributes . '>' . self::EOL;
             }
 
             if (!isset($attributes)) {
                 foreach ($items as $key => $value) {
-                    $headerContents .= '<td id="'.$key.'" >'.$value.'</td>'.self::EOL;
+                    $headerContents .= '<td id="' . $key . '" >' . $value . '</td>' . self::EOL;
                 }
             } else {
                 foreach ($items as $Hkey => $Hvalue) {
                     foreach ($attributes as $Akey => $Avalue) {
-                        $headerContents .= '<td '.$Akey.'="'.$Avalue.'" >'.$Hvalue.'</td>'.self::EOL;
+                        $headerContents .= '<td ' . $Akey . '="' . $Avalue . '" >' . $Hvalue . '</td>' . self::EOL;
                     }
                 }
             }
-            $this->tableBase .= $headerItem.$headerContents.'</tr>'.self::EOL;
+            $this->tableBase .= $headerItem . $headerContents . '</tr>' . self::EOL;
 
             return $this;
         }
@@ -164,7 +164,7 @@ namespace Ness\UI
          */
         public function Create()
         {
-            $this->tableBase .= '</table>'.self::EOL;
+            $this->tableBase .= '</table>' . self::EOL;
 
             return $this->tableBase;
         }

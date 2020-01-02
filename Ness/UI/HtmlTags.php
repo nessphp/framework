@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\UI
-{
+namespace Ness\UI {
 
     /**
      * A special class for creating html tags.
@@ -26,7 +26,6 @@ namespace Ness\UI
         public static function customTag($tag = 'title', $content = 'Hello World')
         {
             return "<{$tag}>{$content}</{$tag}>";
-
         }
 
         /**
@@ -39,13 +38,13 @@ namespace Ness\UI
         public static function a($text = null, $url = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<a href="'.$url.'">'.$text.'</a>';
+                return '<a href="' . $url . '">' . $text . '</a>';
             } else {
-                $base = '<a href="'.$url.'"';
+                $base = '<a href="' . $url . '"';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</a>';
+                $base .= ' >' . $text . '</a>';
 
                 return $base;
             }
@@ -61,13 +60,13 @@ namespace Ness\UI
         public static function abbr($text = null, $title = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<abbr title="'.$title.'">'.$text.'</abbr>';
+                return '<abbr title="' . $title . '">' . $text . '</abbr>';
             } else {
-                $base = '<abbr title="'.$title.'"';
+                $base = '<abbr title="' . $title . '"';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</abbr>';
+                $base .= ' >' . $text . '</abbr>';
 
                 return $base;
             }
@@ -82,7 +81,7 @@ namespace Ness\UI
         public static function audio($source = null, $type = null)
         {
             $base = '<audio controls>';
-            $base .= '<source src="'.$source.'" type="'.$type.'" >';
+            $base .= '<source src="' . $source . '" type="' . $type . '" >';
             $base .= '</audio>';
 
             return $base;
@@ -97,13 +96,13 @@ namespace Ness\UI
         public static function b($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<b>'.$text.'</b>';
+                return '<b>' . $text . '</b>';
             } else {
                 $base = '<b  ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</b>';
+                $base .= ' >' . $text . '</b>';
 
                 return $base;
             }
@@ -127,13 +126,13 @@ namespace Ness\UI
         public static function button($name = null, $clik = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<button type="button" onclick="'.$clik.'">'.$name.'</button>';
+                return '<button type="button" onclick="' . $clik . '">' . $name . '</button>';
             } else {
-                $base = '<button type="button"  onclick="'.$clik.'"';
+                $base = '<button type="button"  onclick="' . $clik . '"';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$name.'</button>';
+                $base .= ' >' . $name . '</button>';
 
                 return $base;
             }
@@ -148,13 +147,13 @@ namespace Ness\UI
         public static function code($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<code>'.$text.'</code>';
+                return '<code>' . $text . '</code>';
             } else {
                 $base = '<code ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</code>';
+                $base .= ' >' . $text . '</code>';
 
                 return $base;
             }
@@ -180,13 +179,13 @@ namespace Ness\UI
         public static function em($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<em>'.$text.'</em>';
+                return '<em>' . $text . '</em>';
             } else {
                 $base = '<em ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</em>';
+                $base .= ' >' . $text . '</em>';
 
                 return $base;
             }
@@ -201,13 +200,13 @@ namespace Ness\UI
         public static function strong($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<strong>'.$text.'</strong>';
+                return '<strong>' . $text . '</strong>';
             } else {
                 $base = '<strong ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</strong>';
+                $base .= ' >' . $text . '</strong>';
 
                 return $base;
             }
@@ -222,13 +221,13 @@ namespace Ness\UI
         public static function samp($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<samp>'.$text.'</samp>';
+                return '<samp>' . $text . '</samp>';
             } else {
                 $base = '<samp ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</samp>';
+                $base .= ' >' . $text . '</samp>';
 
                 return $base;
             }
@@ -243,13 +242,13 @@ namespace Ness\UI
         public static function span($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<span>'.$text.'</span>';
+                return '<span>' . $text . '</span>';
             } else {
                 $base = '<span ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</span>';
+                $base .= ' >' . $text . '</span>';
 
                 return $base;
             }
@@ -264,13 +263,13 @@ namespace Ness\UI
         public static function kbd($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<kbd>'.$text.'</kbd>';
+                return '<kbd>' . $text . '</kbd>';
             } else {
                 $base = '<kbd ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</kbd>';
+                $base .= ' >' . $text . '</kbd>';
 
                 return $base;
             }
@@ -285,11 +284,11 @@ namespace Ness\UI
         public static function embed($src = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<embed src="'.$src.'">';
+                return '<embed src="' . $src . '">';
             } else {
-                $base = '<embed src="'.$src.'" ';
+                $base = '<embed src="' . $src . '" ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
                 $base .= ' >';
 
@@ -306,13 +305,13 @@ namespace Ness\UI
         public static function h1($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<h1>'.$text.'</h1>';
+                return '<h1>' . $text . '</h1>';
             } else {
                 $base = '<h1 ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</h1>';
+                $base .= ' >' . $text . '</h1>';
 
                 return $base;
             }
@@ -327,13 +326,13 @@ namespace Ness\UI
         public static function h2($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<h2>'.$text.'</h2>';
+                return '<h2>' . $text . '</h2>';
             } else {
                 $base = '<h2 ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</h2>';
+                $base .= ' >' . $text . '</h2>';
 
                 return $base;
             }
@@ -348,13 +347,13 @@ namespace Ness\UI
         public static function h3($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<h3>'.$text.'</h3>';
+                return '<h3>' . $text . '</h3>';
             } else {
                 $base = '<h3 ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</h3>';
+                $base .= ' >' . $text . '</h3>';
 
                 return $base;
             }
@@ -369,13 +368,13 @@ namespace Ness\UI
         public static function h4($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<h4>'.$text.'</h4>';
+                return '<h4>' . $text . '</h4>';
             } else {
                 $base = '<h4 ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</h4>';
+                $base .= ' >' . $text . '</h4>';
 
                 return $base;
             }
@@ -390,13 +389,13 @@ namespace Ness\UI
         public static function h5($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<h5>'.$text.'</h5>';
+                return '<h5>' . $text . '</h5>';
             } else {
                 $base = '<h5 ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</h5>';
+                $base .= ' >' . $text . '</h5>';
 
                 return $base;
             }
@@ -411,13 +410,13 @@ namespace Ness\UI
         public static function h6($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<h6>'.$text.'</h6>';
+                return '<h6>' . $text . '</h6>';
             } else {
                 $base = '<h6 ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</h6>';
+                $base .= ' >' . $text . '</h6>';
 
                 return $base;
             }
@@ -440,13 +439,13 @@ namespace Ness\UI
         public static function i($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<i>'.$text.'</i>';
+                return '<i>' . $text . '</i>';
             } else {
                 $base = '<i ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</i>';
+                $base .= ' >' . $text . '</i>';
 
                 return $base;
             }
@@ -461,13 +460,13 @@ namespace Ness\UI
         public static function u($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<u>'.$text.'</u>';
+                return '<u>' . $text . '</u>';
             } else {
                 $base = '<u ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</u>';
+                $base .= ' >' . $text . '</u>';
 
                 return $base;
             }
@@ -482,11 +481,11 @@ namespace Ness\UI
         public static function img($src = null, $attrb = null)
         {
             if ($attrb == null) {
-                return '<img src="'.$src.'">';
+                return '<img src="' . $src . '">';
             } else {
-                $base = '<img src="'.$src.'" ';
+                $base = '<img src="' . $src . '" ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
                 $base .= ' >';
 
@@ -526,13 +525,13 @@ namespace Ness\UI
         public static function meter($value = 0, $text = 'display text', $attrb = null)
         {
             if ($attrb == null) {
-                return '<meter value="'.$value.'" >'.$text.'</meter>';
+                return '<meter value="' . $value . '" >' . $text . '</meter>';
             } else {
-                $base = '<meter value="'.$value.'" ';
+                $base = '<meter value="' . $value . '" ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</meter>';
+                $base .= ' >' . $text . '</meter>';
 
                 return $base;
             }
@@ -557,21 +556,20 @@ namespace Ness\UI
          *
          *	@return string
          */
-        public static function progress($value = 0, $max = '100', $text= 'Progress Bar',$attrb = null)
+        public static function progress($value = 0, $max = '100', $text = 'Progress Bar', $attrb = null)
         {
             if ($attrb == null) {
-                return '<Progress value="'.$value.'"  max="'.$max.'">'.$text.'</Progress>';
+                return '<Progress value="' . $value . '"  max="' . $max . '">' . $text . '</Progress>';
             } else {
-                $base = '<Progress value="'.$value.'"  max="'.$max.'" ';
+                $base = '<Progress value="' . $value . '"  max="' . $max . '" ';
                 foreach ($attrb as $key => $value) {
-                    $base .= ' '.$key.'="'.$value.'"';
+                    $base .= ' ' . $key . '="' . $value . '"';
                 }
-                $base .= ' >'.$text.'</Progress>';
+                $base .= ' >' . $text . '</Progress>';
 
                 return $base;
             }
         }
-
     }
 
     /*****************************************************************
@@ -596,7 +594,7 @@ namespace Ness\UI
             } else {
                 $item1 = '<dl ';
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
                 $item1 .= '>';
                 $this->base .= $item1;
@@ -609,14 +607,14 @@ namespace Ness\UI
         public function dt($text, $attrb = null)
         {
             if ($attrb == null) {
-                $this->contents .= '<dt>'.$text.'</dt>';
+                $this->contents .= '<dt>' . $text . '</dt>';
             } else {
                 $item1 = '<dt ';
 
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
-                $item1 .= ' >'.$text.'</dt>';
+                $item1 .= ' >' . $text . '</dt>';
                 $this->contents .= $item1;
             }
 
@@ -626,13 +624,13 @@ namespace Ness\UI
         public function dd($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                $this->contents .= '<dd>'.$text.'</dd>';
+                $this->contents .= '<dd>' . $text . '</dd>';
             } else {
                 $item1 = '<dd ';
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
-                $item1 .= ' >'.$text.'</dd>';
+                $item1 .= ' >' . $text . '</dd>';
                 $this->contents .= $item1;
             }
 
@@ -662,11 +660,11 @@ namespace Ness\UI
         {
             $this->type_gl = $type;
             if (!isset($attrb)) {
-                $this->base .= '<'.$type.'> ';
+                $this->base .= '<' . $type . '> ';
             } else {
-                $item1 = '<'.$type.' ';
+                $item1 = '<' . $type . ' ';
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
                 $item1 .= '>';
                 $this->base .= $item1;
@@ -678,14 +676,14 @@ namespace Ness\UI
         public function li($text, $attrb = null)
         {
             if ($attrb == null) {
-                $this->contents .= '<li>'.$text.'</li>';
+                $this->contents .= '<li>' . $text . '</li>';
             } else {
                 $item1 = '<li ';
 
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
-                $item1 .= ' >'.$text.'</li>';
+                $item1 .= ' >' . $text . '</li>';
                 $this->contents .= $item1;
             }
 
@@ -696,7 +694,7 @@ namespace Ness\UI
         {
             $total_list = $this->base;
             $total_list .= $this->contents;
-            $total_list .= '</'.$this->type_gl.'>';
+            $total_list .= '</' . $this->type_gl . '>';
 
             return $total_list;
         }
@@ -717,7 +715,7 @@ namespace Ness\UI
             } else {
                 $item1 = '<select ';
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
                 $item1 .= '>';
                 $this->base .= $item1;
@@ -729,14 +727,14 @@ namespace Ness\UI
         public function option($text = null, $value = null, $attrb = null)
         {
             if ($attrb == null) {
-                $this->contents .= '<option value="'.$value.'">'.$text.'</option>';
+                $this->contents .= '<option value="' . $value . '">' . $text . '</option>';
             } else {
-                $item1 = '<option value="'.$value.'" ';
+                $item1 = '<option value="' . $value . '" ';
 
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
-                $item1 .= ' >'.$text.'</option>';
+                $item1 .= ' >' . $text . '</option>';
                 $this->contents .= $item1;
             }
 
@@ -746,11 +744,11 @@ namespace Ness\UI
         public function optgroup($text = null, $attrb = null)
         {
             if ($attrb == null) {
-                $this->contents .= '<optgroup label="'.$text.'" >';
+                $this->contents .= '<optgroup label="' . $text . '" >';
             } else {
-                $item1 = '<optgroup label="'.$text.'" ';
+                $item1 = '<optgroup label="' . $text . '" ';
                 foreach ($attrb as $key => $value) {
-                    $item1 .= ' '.$key.'="'.$value.'"';
+                    $item1 .= ' ' . $key . '="' . $value . '"';
                 }
                 $item1 .= ' >';
                 $this->contents .= $item1;

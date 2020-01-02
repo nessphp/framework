@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\IO
-{
+namespace Ness\IO {
+    use FFI\Exception;
     /**
      * This class is used to run commands related File System.
      */
@@ -82,7 +83,7 @@ namespace Ness\IO
         public static function Append($path = null, $contents = '')
         {
             try {
-                file_put_contents($path, $contents.PHP_EOL, FILE_APPEND | LOCK_EX);
+                file_put_contents($path, $contents . PHP_EOL, FILE_APPEND | LOCK_EX);
 
                 return true;
             } catch (Exception $ex) {

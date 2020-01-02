@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Tool
-{
+namespace Ness\Tool {
     /**
      *	Ness PHP helper class for session management.
      **/
@@ -160,7 +160,7 @@ namespace Ness\Tool
         public function DeleteMultiple(array $arrayKeys = null)
         {
             $toClear = array_fill_keys($arrayKeys, '');
-            foreach ($toClear as $key=> $value) {
+            foreach ($toClear as $key => $value) {
                 if (isset($_SESSION[$key])) {
                     unset($_SESSION[$key]);
                 } else {
@@ -197,5 +197,4 @@ namespace Ness\Tool
             session_destroy();
         }
     }
-
 }

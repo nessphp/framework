@@ -1,16 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 
-namespace Ness\Forms
-{
+namespace Ness\Forms {
     /**
      * This class is used in forms. You can create any type of form element by calling functions of this
      * class.
@@ -29,11 +29,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="text" name="'.$fieldname.'">';
+                $creator .= '<input type="text" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="text" name="'.$fieldname.'" ';
+                $creator .= '<input type="text" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -53,11 +53,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="password" name="'.$fieldname.'">';
+                $creator .= '<input type="password" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="password" name="'.$fieldname.'" ';
+                $creator .= '<input type="password" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -77,11 +77,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="submit" name="'.$fieldname.'">';
+                $creator .= '<input type="submit" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="submit" name="'.$fieldname.'" ';
+                $creator .= '<input type="submit" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -104,7 +104,7 @@ namespace Ness\Forms
             } else {
                 $creator .= '<input type="reset" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -125,11 +125,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="radio" name="'.$fieldname.'" value="'.$fieldValue.'">';
+                $creator .= '<input type="radio" name="' . $fieldname . '" value="' . $fieldValue . '">';
             } else {
-                $creator .= '<input type="radio" name="'.$fieldname.'" value="'.$fieldValue.'" ';
+                $creator .= '<input type="radio" name="' . $fieldname . '" value="' . $fieldValue . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -150,11 +150,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="checkbox" name="'.$fieldname.'" value="'.$fieldValue.'">';
+                $creator .= '<input type="checkbox" name="' . $fieldname . '" value="' . $fieldValue . '">';
             } else {
-                $creator .= '<input type="checkbox" name="'.$fieldname.'" value="'.$fieldValue.'" ';
+                $creator .= '<input type="checkbox" name="' . $fieldname . '" value="' . $fieldValue . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -175,11 +175,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="button" name="'.$fieldname.'" value="'.$fieldValue.'">';
+                $creator .= '<input type="button" name="' . $fieldname . '" value="' . $fieldValue . '">';
             } else {
-                $creator .= '<input type="button" name="'.$fieldname.'" value="'.$fieldValue.'" ';
+                $creator .= '<input type="button" name="' . $fieldname . '" value="' . $fieldValue . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -199,11 +199,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="color" name="'.$fieldname.'">';
+                $creator .= '<input type="color" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="color" name="'.$fieldname.'" ';
+                $creator .= '<input type="color" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -223,11 +223,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="date" name="'.$fieldname.'">';
+                $creator .= '<input type="date" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="date" name="'.$fieldname.'" ';
+                $creator .= '<input type="date" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -247,11 +247,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="email" name="'.$fieldname.'">';
+                $creator .= '<input type="email" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="email" name="'.$fieldname.'" ';
+                $creator .= '<input type="email" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -271,11 +271,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="month" name="'.$fieldname.'">';
+                $creator .= '<input type="month" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="month" name="'.$fieldname.'" ';
+                $creator .= '<input type="month" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -295,11 +295,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="number" name="'.$fieldname.'">';
+                $creator .= '<input type="number" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="number" name="'.$fieldname.'" ';
+                $creator .= '<input type="number" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -319,11 +319,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="search" name="'.$fieldname.'">';
+                $creator .= '<input type="search" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="search" name="'.$fieldname.'" ';
+                $creator .= '<input type="search" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -343,11 +343,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="file" name="'.$fieldname.'">';
+                $creator .= '<input type="file" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="file" name="'.$fieldname.'" ';
+                $creator .= '<input type="file" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -367,11 +367,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="tel" name="'.$fieldname.'">';
+                $creator .= '<input type="tel" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="tel" name="'.$fieldname.'" ';
+                $creator .= '<input type="tel" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -391,11 +391,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="url" name="'.$fieldname.'">';
+                $creator .= '<input type="url" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="url" name="'.$fieldname.'" ';
+                $creator .= '<input type="url" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -415,11 +415,11 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<input type="time" name="'.$fieldname.'">';
+                $creator .= '<input type="time" name="' . $fieldname . '">';
             } else {
-                $creator .= '<input type="time" name="'.$fieldname.'" ';
+                $creator .= '<input type="time" name="' . $fieldname . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
                 $creator .= '>';
             }
@@ -440,13 +440,13 @@ namespace Ness\Forms
         {
             $creator = '';
             if (is_null($attr)) {
-                $creator .= '<label for="'.$lblFor.'">'.$lblText.'</label>';
+                $creator .= '<label for="' . $lblFor . '">' . $lblText . '</label>';
             } else {
-                $creator .= '<label for="'.$lblFor.'" ';
+                $creator .= '<label for="' . $lblFor . '" ';
                 foreach ($attr as $key => $value) {
-                    $creator .= ' '.$key.'="'.$value.'"';
+                    $creator .= ' ' . $key . '="' . $value . '"';
                 }
-                $creator .= '> '.$lblText.'</label>';
+                $creator .= '> ' . $lblText . '</label>';
             }
 
             return $creator;
@@ -457,8 +457,7 @@ namespace Ness\Forms
          */
         public static function csrfField()
         {
-            return '<input type="hidden" name="csrf_field" value="'.sha1(\Ness\Url::getUrl()).'" />';
+            return '<input type="hidden" name="csrf_field" value="' . sha1(\Ness\Url::getUrl()) . '" />';
         }
     }
-
 }

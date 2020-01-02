@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness;
@@ -26,7 +27,7 @@ class Model
      */
     public static function Load($class = '')
     {
-        $fileName = dirname(__DIR__).DIRECTORY_SEPARATOR.Configuration::getApplicationFolder().DIRECTORY_SEPARATOR.'Model'.DIRECTORY_SEPARATOR.$class.'.php';
+        $fileName = dirname(__DIR__) . DIRECTORY_SEPARATOR . Configuration::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Model' . DIRECTORY_SEPARATOR . $class . '.php';
         if (file_exists($fileName)) {
             require_once $fileName;
         }
@@ -42,11 +43,11 @@ class Model
     public  function toArray()
     {
         $array_generated = array();
-        if(count(get_object_vars($this)) > 0){
-            foreach(get_object_vars($this) as $key=>$value){
+        if (count(get_object_vars($this)) > 0) {
+            foreach (get_object_vars($this) as $key => $value) {
                 $array_generated[$key] = $value;
             }
-        }else{
+        } else {
             $array_generated = array();
         }
         return $array_generated;

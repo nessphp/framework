@@ -1,15 +1,16 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Helpers
-{
+namespace Ness\Helpers {
+
     use Ness\IO\SpecialDirectory as sd;
 
     /**
@@ -35,7 +36,7 @@ namespace Ness\Helpers
          */
         public static function isAvailable($langiage_file_name = 'Default.php')
         {
-            if (file_exists(sd::LanguageFolder().DIRECTORY_SEPARATOR.$langiage_file_name)) {
+            if (file_exists(sd::LanguageFolder() . DIRECTORY_SEPARATOR . $langiage_file_name)) {
                 return true;
             } else {
                 return false;
@@ -49,7 +50,7 @@ namespace Ness\Helpers
          */
         public function setLanguage($langiage_file_name = 'Default.php')
         {
-            $this->lang_file = sd::LanguageFolder().DIRECTORY_SEPARATOR.$langiage_file_name;
+            $this->lang_file = sd::LanguageFolder() . DIRECTORY_SEPARATOR . $langiage_file_name;
 
             return $this;
         }

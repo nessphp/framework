@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness\System;
@@ -31,11 +32,9 @@ class View
     public function Render($viewScript, $isUsual = true)
     {
         if ($isUsual) {
-            require dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.'View'.DIRECTORY_SEPARATOR.$viewScript;
-
-            
+            require dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'View' . DIRECTORY_SEPARATOR . $viewScript;
         } else {
-            require dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.$viewScript;
+            require dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . $viewScript;
         }
     }
 
@@ -50,9 +49,9 @@ class View
     public function isAvailable($viewScript, $isUsual = true)
     {
         if ($isUsual) {
-            return file_exists(dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.'View'.DIRECTORY_SEPARATOR.$viewScript);
+            return file_exists(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'View' . DIRECTORY_SEPARATOR . $viewScript);
         } else {
-            return file_exists(dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.$viewScript);
+            return file_exists(dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . $viewScript);
         }
     }
 }

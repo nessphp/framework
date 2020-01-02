@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness\System;
@@ -103,36 +104,34 @@ class Framework
 
 
         // Look for controllers and run the app.
-        $controllerName = $tokens[$tk1].'Controller';
-        if (file_exists(conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.$area.$controllerName.'.php')) {
-            require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.$area.$controllerName.'.php';
+        $controllerName = $tokens[$tk1] . 'Controller';
+        if (file_exists(conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . $area . $controllerName . '.php')) {
+            require_once conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . $area . $controllerName . '.php';
             $controller = new $controllerName();
             if (isset($tokens[$tk2]) && ($tokens[$tk2] != '')) {
-                $actionName = $tokens[$tk2].'Action';
+                $actionName = $tokens[$tk2] . 'Action';
                 if (isset($tokens[$tk3])) {
-                    if(method_exists($controller, $actionName))
-                    {
+                    if (method_exists($controller, $actionName)) {
                         //Action available with parameters, Load Action
                         $controller->{$actionName}($tokens[$tk3]);
-                    }else{
+                    } else {
                         //Action Not available show error screen
-                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'NotFoundError.php';
+                        require_once conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'ErrorManagement' . DIRECTORY_SEPARATOR . 'NotFoundError.php';
                         $controllerName = 'NotFoundError';
                         $controller = new $controllerName();
                         $controller->ActionNotFound();
                     }
                 } else {
-                    if(method_exists($controller, $actionName))
-                    {
+                    if (method_exists($controller, $actionName)) {
                         //Action available without parameters, Load Action
                         $controller->{$actionName}();
-                    }else{
+                    } else {
                         //Action Not available show error screen
-                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'NotFoundError.php';
+                        require_once conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'ErrorManagement' . DIRECTORY_SEPARATOR . 'NotFoundError.php';
                         $controllerName = 'NotFoundError';
                         $controller = new $controllerName();
                         $controller->ActionNotFound();
-                    }  
+                    }
                 }
             } else {
                 // Default entry point (IndexAction), if action not specified
@@ -141,15 +140,15 @@ class Framework
         } else {
             // Check if controller defined in url, if not look for Index.php controller and IndexAction by default.
             if ($tokens[$tk1] == '') {
-                if (file_exists(conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'indexController.php')) {
-                    require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'indexController.php';
+                if (file_exists(conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'indexController.php')) {
+                    require_once conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'indexController.php';
                     $controllerName = 'indexController';
                     $controller = new $controllerName();
                     $controller->indexAction();
                 }
             } else {
                 // if not found an entry point(also indexController.php & IndexAction ) load a 404 error.
-                require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'NotFoundError.php';
+                require_once conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'ErrorManagement' . DIRECTORY_SEPARATOR . 'NotFoundError.php';
                 $controllerName = 'NotFoundError';
                 $controller = new $controllerName();
                 $controller->ControllerNotFound();
@@ -170,7 +169,7 @@ class Framework
                     // check each url token with each unwanted parameter if contains it.
                     if (strpos($value, $unwanted) !== false) {
                         // force redirect to ErrorHandling Controller
-                        require_once conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'UrlProtectionError.php';
+                        require_once conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'ErrorManagement' . DIRECTORY_SEPARATOR . 'UrlProtectionError.php';
                         $controllerName = 'UrlProtectionError';
                         $controller = new $controllerName();
                         $controller->ShowErrorPage($value, $unwanted);
@@ -186,17 +185,15 @@ class Framework
      */
     private static function checkMaintenanceMode()
     {
-        if(conf::isMaintenanceEnabled())
-        {
-            $file = conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Controller'.DIRECTORY_SEPARATOR.'ErrorManagement'.DIRECTORY_SEPARATOR.'MaintenanceMode.php';
-            if(file_exists($file))
-            {
+        if (conf::isMaintenanceEnabled()) {
+            $file = conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Controller' . DIRECTORY_SEPARATOR . 'ErrorManagement' . DIRECTORY_SEPARATOR . 'MaintenanceMode.php';
+            if (file_exists($file)) {
                 require_once $file;
                 $controllerName = 'MaintenanceMode';
                 $controller = new $controllerName();
                 $controller->ShowMessageScreen();
                 exit();
-            }   
+            }
         }
     }
 }

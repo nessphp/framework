@@ -1,20 +1,22 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Tool
-{
+namespace Ness\Tool {
+
     use Ness\Configuration as conf;
 
     /*
      * @ignore
      */
+
     define('ModeRequire', 0);
 
     /*
@@ -58,28 +60,28 @@ namespace Ness\Tool
          */
         public static function Load($filename = '', $type = 2)
         {
-            $filepath = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Library'.DIRECTORY_SEPARATOR.$filename;
+            $filepath = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Library' . DIRECTORY_SEPARATOR . $filename;
             if (self::checkFile($filepath)) {
                 switch ($type) {
-                case 0:
+                    case 0:
                         //mode:require
                         require $filepath;
                         break;
-                case 1:
+                    case 1:
                         //mode:Require_Once
                         require_once $filepath;
                         break;
-                case 2:
+                    case 2:
                         //mode:include
                         include $filepath;
                         break;
 
-                case 3:
+                    case 3:
                         //mode:include_once
                         include_once $filepath;
                         break;
 
-                default:
+                    default:
                         include_once $filepath;
                         break;
                 }
@@ -96,28 +98,28 @@ namespace Ness\Tool
          */
         public static function LoadConfig($filename = '', $type = 2)
         {
-            $filepath = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.$filename;
+            $filepath = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . $filename;
             if (self::checkFile($filepath)) {
                 switch ($type) {
-                case 0:
+                    case 0:
                         //mode:require
                         require $filepath;
                         break;
-                case 1:
+                    case 1:
                         //mode:Require_Once
                         require_once $filepath;
                         break;
-                case 2:
+                    case 2:
                         //mode:include
                         include $filepath;
                         break;
 
-                case 3:
+                    case 3:
                         //mode:include_once
                         include_once $filepath;
                         break;
 
-                default:
+                    default:
                         include_once $filepath;
                         break;
                 }
@@ -133,7 +135,7 @@ namespace Ness\Tool
          */
         public static function isAvailable($filename = null)
         {
-            $filepath = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Library'.DIRECTORY_SEPARATOR.$filename;
+            $filepath = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Library' . DIRECTORY_SEPARATOR . $filename;
             if (file_exists($filepath)) {
                 return true;
             } else {

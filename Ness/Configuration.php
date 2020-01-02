@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness;
@@ -58,7 +59,7 @@ class Configuration
         self::$application_version = '1.0.0';
         self::$application_description = 'Your description for the application';
         self::$application_query_data = [];
-        self::$application_resource_file = dirname(__DIR__).DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.'resources.xml';
+        self::$application_resource_file = dirname(__DIR__) . DIRECTORY_SEPARATOR . self::$application_folder . DIRECTORY_SEPARATOR . 'resources.xml';
         self::$application_is_maintenance_mode_enabled = false;
     }
 
@@ -128,8 +129,7 @@ class Configuration
      */
     public static function setResourceFile($prm_resource_file = 'Resources.xml')
     {
-        self::$application_resource_file = dirname(__DIR__).DIRECTORY_SEPARATOR.self::$application_folder.DIRECTORY_SEPARATOR.$prm_resource_file;
-
+        self::$application_resource_file = dirname(__DIR__) . DIRECTORY_SEPARATOR . self::$application_folder . DIRECTORY_SEPARATOR . $prm_resource_file;
     }
 
     /**

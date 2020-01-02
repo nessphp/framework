@@ -1,38 +1,40 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
- namespace Ness\UI;
+namespace Ness\UI;
 
- use Ness\Configuration as conf;
- use Ness\IO\SpecialDirectory;
- use const E_USER_ERROR;
- use const ENT_QUOTES;
- use function file_exists;
- use function htmlspecialchars;
- use function ob_get_clean;
- use function ob_start;
- use function str_replace;
- use function trigger_error;
+use Ness\Configuration as conf;
+use Ness\IO\SpecialDirectory;
+use const E_USER_ERROR;
+use const ENT_QUOTES;
+use function file_exists;
+use function htmlspecialchars;
+use function ob_get_clean;
+use function ob_start;
+use function str_replace;
+use function trigger_error;
 
 
- /*
+/*
   * @ignore
   */
- define('rPath', conf::getApplicationUrl().'/'.conf::getApplicationFolder().'/'.'Template'.'/');
 
- /**
-  * Ness PHP UI libraries
-  * This class is used to speed up your ui design process with view inheritance.
-  */
- class Page
- {
+define('rPath', conf::getApplicationUrl() . '/' . conf::getApplicationFolder() . '/' . 'Template' . '/');
+
+/**
+ * Ness PHP UI libraries
+ * This class is used to speed up your ui design process with view inheritance.
+ */
+class Page
+{
     /** @ignore */
     private $title;
 
@@ -57,7 +59,7 @@
      */
     public function __construct()
     {
-        $this->MASTER = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR.conf::getApplicationFolder().DIRECTORY_SEPARATOR.'Template'.DIRECTORY_SEPARATOR;
+        $this->MASTER = dirname(dirname(__DIR__)) . DIRECTORY_SEPARATOR . conf::getApplicationFolder() . DIRECTORY_SEPARATOR . 'Template' . DIRECTORY_SEPARATOR;
     }
 
 
@@ -70,13 +72,13 @@
      */
     public function setLayout($layoutPathParam = 'master.php')
     {
-        if (file_exists($this->MASTER.$this->layoutPath.$layoutPathParam)) {
-            $this->layoutPath = $this->MASTER.$this->layoutPath.$layoutPathParam;
+        if (file_exists($this->MASTER . $this->layoutPath . $layoutPathParam)) {
+            $this->layoutPath = $this->MASTER . $this->layoutPath . $layoutPathParam;
         } else {
             // Prevent XSS Attacks.
-            $output = $this->MASTER.$this->layoutPath.$layoutPathParam;
+            $output = $this->MASTER . $this->layoutPath . $layoutPathParam;
             $output = htmlspecialchars($output, ENT_QUOTES, 'UTF-8');
-            trigger_error('Error loading template file ('.$output.'). Please check template folder.', E_USER_ERROR);
+            trigger_error('Error loading template file (' . $output . '). Please check template folder.', E_USER_ERROR);
         }
     }
 
@@ -137,7 +139,7 @@
      */
     public static function includeFile($fileName = '')
     {
-        return rPath.$fileName;
+        return rPath . $fileName;
     }
 
     /**
@@ -145,10 +147,10 @@
      *
      * @param string $fileName File name; ex: widget.html
      */
-    public static function insertWidget($filename){
-        $wfile = SpecialDirectory::ContentFolder().DIRECTORY_SEPARATOR.'widget'.DIRECTORY_SEPARATOR.$filename;
-        if(file_exists($wfile))
-        {
+    public static function insertWidget($filename)
+    {
+        $wfile = SpecialDirectory::ContentFolder() . DIRECTORY_SEPARATOR . 'widget' . DIRECTORY_SEPARATOR . $filename;
+        if (file_exists($wfile)) {
             include_once $wfile;
         }
     }
@@ -185,4 +187,4 @@
         $this->__applyParameters();
         echo $this->output;
     }
- }
+}

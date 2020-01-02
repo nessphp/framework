@@ -1,15 +1,15 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Helpers
-{
+namespace Ness\Helpers {
     /**
      * Reverse an array horizontally
      */
@@ -38,14 +38,14 @@ namespace Ness\Helpers
             if (is_array($choose)) {
                 $ret = [];
                 foreach ($choose as $v) {
-                    if (array_key_exists($v, (array)$array_name)) {
+                    if (array_key_exists($v, (array) $array_name)) {
                         $ret[$v] = $array_name[$v];
                     }
                 }
 
                 return $ret;
             } else {
-                if (array_key_exists($choose, (array)$array_name)) {
+                if (array_key_exists($choose, (array) $array_name)) {
                     return $array_name[$choose];
                 }
             }
@@ -61,12 +61,12 @@ namespace Ness\Helpers
         {
             if (is_array($element)) {
                 foreach ($element as $v) {
-                    if (array_key_exists($v, (array)$array_name)) {
+                    if (array_key_exists($v, (array) $array_name)) {
                         $array_name[$v] = '';
                     }
                 }
             } else {
-                if (array_key_exists($element, (array)$array_name)) {
+                if (array_key_exists($element, (array) $array_name)) {
                     $array_name[$element] = '';
                 }
             }
@@ -82,12 +82,12 @@ namespace Ness\Helpers
         {
             if (is_array($element)) {
                 foreach ($element as $v) {
-                    if (array_key_exists($v, (array)$array_name)) {
+                    if (array_key_exists($v, (array) $array_name)) {
                         $array_name[$v] = null;
                     }
                 }
             } else {
-                if (array_key_exists($element, (array)$array_name)) {
+                if (array_key_exists($element, (array) $array_name)) {
                     $array_name[$element] = null;
                 }
             }

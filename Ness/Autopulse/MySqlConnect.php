@@ -1,21 +1,25 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
-namespace Ness\Autopulse
-{
+namespace Ness\Autopulse {
+
     use PDO;
-    
+    use PDOException;
+    use FFI\Exception;
+
     /**
      * This library is used to manage your mysql connections.
      */
-    class MySqlConnect{
+    class MySqlConnect
+    {
         /**
          * @var mixed variable This will store your mysql connection
          */
@@ -43,12 +47,12 @@ namespace Ness\Autopulse
          **/
         public function __construct($host = 'localhost', $user = 'root', $pass = 'root', $db = '', $options = null)
         {
-            $my_db = 'mysql:host='.$host.';dbname='.$db;
+            $my_db = 'mysql:host=' . $host . ';dbname=' . $db;
             if ($options == null) {
                 $options = [
-             PDO::ATTR_PERSISTENT    => true,
-             PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION,
-                           ];
+                    PDO::ATTR_PERSISTENT    => true,
+                    PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION,
+                ];
             }
 
             try {
@@ -98,12 +102,12 @@ namespace Ness\Autopulse
          */
         public function Connection($host = 'localhost', $user = 'root', $pass = 'root', $db = '', $options = null)
         {
-            $my_db = 'mysql:host='.$host.';dbname='.$db;
+            $my_db = 'mysql:host=' . $host . ';dbname=' . $db;
             if ($options == null) {
                 $options = [
-                PDO::ATTR_PERSISTENT    => true,
-                PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION,
-              ];
+                    PDO::ATTR_PERSISTENT    => true,
+                    PDO::ATTR_ERRMODE       => PDO::ERRMODE_EXCEPTION,
+                ];
             }
 
             try {

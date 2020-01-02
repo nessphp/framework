@@ -25,7 +25,7 @@
     .header-box h1{
         text-align: center;
         vertical-align: middle;
-        color:#EE4540;
+        color:#fff;
         font-weight: lighter;
         text-transform: uppercase;
         font-size: 60px;
@@ -44,13 +44,13 @@
         font-size: larger;
         font-weight: lighter;
         font-family: 'Segoe UI';
-        color: #DFDFDF;
+        color: #e2e2e2;
     }
     .header-box a{
         vertical-align: middle;
         text-align: center;
         font-size: larger;
-        color:#DFDFDF;
+        color:#fff;
         text-decoration: none;
         font-family: 'Segoe UI';
         border-bottom: 2px solid transparent;
@@ -61,7 +61,7 @@
     .header-box a:hover{
         text-decoration: none;
         font-family: 'Segoe UI';
-        border-bottom: 2px solid #EE4540;
+        border-bottom: 2px solid #107C41;
     }
     .footer-box{
         position: absolute;
@@ -98,16 +98,12 @@
     <center>
         <a href="http://nessphp.github.io/">Home Page</a> 
         <a href="https://github.com/nessphp">GitHub</a> 
-        <a href="http://nessphp.github.io/">Documentation</a> 
+        <a href="http://nessphp.github.io/docs">Documentation</a> 
     </center>
     
 
 </div>
 
-
-<div class="footer-box">
-    <h1 class="disable-selection0">Ness PHP</h1>
-</div>
 </body>
 </html>
 

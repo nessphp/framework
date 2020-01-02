@@ -1,16 +1,18 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness;
 
 use Ness\Configuration;
+
 /**
  * This class is used load contents to your html pages.
  * ContentManager class has access to Application/Content path
@@ -27,7 +29,7 @@ class ContentManager
      */
     public static function getImage($filename = 'img.png')
     {
-        return Configuration::getApplicationUrl().'/'.Configuration::getApplicationFolder().'/'.'Content'.'/'.'img'.'/'.$filename;
+        return Configuration::getApplicationUrl() . '/' . Configuration::getApplicationFolder() . '/' . 'Content' . '/' . 'img' . '/' . $filename;
     }
 
     /**
@@ -39,7 +41,7 @@ class ContentManager
      */
     public static function getStyleSheet($filename = 'style.css')
     {
-        return Configuration::getApplicationUrl().'/'.Configuration::getApplicationFolder().'/'.'Content'.'/'.'css'.'/'.$filename;
+        return Configuration::getApplicationUrl() . '/' . Configuration::getApplicationFolder() . '/' . 'Content' . '/' . 'css' . '/' . $filename;
     }
 
     /**
@@ -51,7 +53,7 @@ class ContentManager
      */
     public static function getJavaScript($filename = 'loader.js')
     {
-        return Configuration::getApplicationUrl().'/'.Configuration::getApplicationFolder().'/'.'Content'.'/'.'js'.'/'.$filename;
+        return Configuration::getApplicationUrl() . '/' . Configuration::getApplicationFolder() . '/' . 'Content' . '/' . 'js' . '/' . $filename;
     }
 
     /**
@@ -63,9 +65,9 @@ class ContentManager
      */
     public static function getWidget($filename = 'widget.html')
     {
-        return Configuration::getApplicationUrl().'/'.Configuration::getApplicationFolder().'/'.'Content'.'/'.'widget'.'/'.$filename;
+        return Configuration::getApplicationUrl() . '/' . Configuration::getApplicationFolder() . '/' . 'Content' . '/' . 'widget' . '/' . $filename;
     }
-    
+
     /**
      * This function returns the filename from the path 
      * {Application}\Content\{$filename}
@@ -75,7 +77,7 @@ class ContentManager
      */
     public static function getFilePath($filename = 'file.txt')
     {
-        return Configuration::getApplicationUrl().'/'.Configuration::getApplicationFolder().'/'.'Content'.'/'.$filename;
+        return Configuration::getApplicationUrl() . '/' . Configuration::getApplicationFolder() . '/' . 'Content' . '/' . $filename;
     }
 
     /**
@@ -87,7 +89,6 @@ class ContentManager
      */
     public static function getUploadPath($upload_dir = 'uploads')
     {
-        return Configuration::getApplicationUrl().'/'.Configuration::getApplicationFolder().'/'.'Content'.'/'.$upload_dir;
+        return Configuration::getApplicationUrl() . '/' . Configuration::getApplicationFolder() . '/' . 'Content' . '/' . $upload_dir;
     }
-    
 }

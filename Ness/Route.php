@@ -1,11 +1,12 @@
 <?php
+
 /**
  * Ness PHP Framework.
  * A solid php framework for fast and secure web applications.
  *
  * @author Sinan SALIH
  * @license MIT License
- * @copyright Copyright (C) 2018-2019 Sinan SALIH
+ * @copyright Copyright (C) 2018-2020 Sinan SALIH
  */
 
 namespace Ness;
@@ -30,7 +31,7 @@ class Route extends Configuration
     public static function MapNew($mapname = 'index', $mapdestination = 'index/index/0')
     {
         $application_static_routes = parent::getStaticRoute();
-        $application_static_routes[$mapname] = Configuration::getApplicationUrl().'/'.$mapdestination;
+        $application_static_routes[$mapname] = Configuration::getApplicationUrl() . '/' . $mapdestination;
         parent::setStaticRoute($application_static_routes);
     }
 
@@ -66,12 +67,12 @@ class Route extends Configuration
             if (!is_null($setparameter)) {
                 $tagToReplace = '{@}';
                 $application_static_routes[$mapname] = str_replace($tagToReplace, $setparameter, $application_static_routes[$mapname]);
-                header('location: '.$application_static_routes[$mapname]);
+                header('location: ' . $application_static_routes[$mapname]);
                 exit();
             } else {
                 $tagToReplace = '{@}';
                 $application_static_routes[$mapname] = str_replace($tagToReplace, '', $application_static_routes[$mapname]);
-                header('location: '.$application_static_routes[$mapname]);
+                header('location: ' . $application_static_routes[$mapname]);
                 exit();
             }
         }
